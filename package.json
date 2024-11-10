@@ -1,0 +1,22 @@
+{
+  "name": "auchan-projet",
+  "version": "1.0.0",
+  "description": "### First Commit",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohammed-Ben-Cheikh/AUCHAN-Projet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mohammed-Ben-Cheikh/AUCHAN-Projet/issues"
+  },
+  "homepage": "https://github.com/Mohammed-Ben-Cheikh/AUCHAN-Projet#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}
