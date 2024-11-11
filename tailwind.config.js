@@ -5,7 +5,11 @@ module.exports = {
     fontFamily: {
       'sans': ['Comfortaa', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        'LimeGreen': "#4EB528"
+      }
+    },
   },
   plugins: [],
 }
