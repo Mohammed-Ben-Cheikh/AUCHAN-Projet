@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+*{
+    font-family: 'Comfortaa';
+}
+#searchBar {
+    background-image: url("../images/search.png");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    width: 232px;
+    height: 38px;
+    margin: auto;
+}
