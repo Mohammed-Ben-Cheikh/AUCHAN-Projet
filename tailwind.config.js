@@ -6,6 +6,7 @@ module.exports = {
       fontSize: {
         'custom-32': '32px',
         'custom-15':'15px',
+        'custom-20':'20px',
       },
       colors: {
         'custom-gray': '#929292',

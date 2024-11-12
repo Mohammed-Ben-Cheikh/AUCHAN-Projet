@@ -11,7 +11,7 @@
 
 <body>
     <header class="sm:container sm:m-auto w-full">
-        <nav class="border-b-2 pb-4 m-4  flex justify-between sm:justify-around">
+        <nav class="container border-b-2 pb-4 m-4  flex justify-between sm:justify-around">
             <div class="flex">
                 <img class=" w-12 h-12 sm:w-16 sm:h-16" src="/images/LogoAuchan.png" alt="LogoAuchan">
                 <span class="mt-4 text-custom-32 font-bold">A-UCHAN</span>
@@ -40,18 +40,15 @@
         <!-- quick link -->
         <div class="sm:flex justify-around hidden container m-auto">
             <div >
-                <ul class="flex">
-                    <li>Accueil</li>
-                    <li>Catégorie</li>
-                    <li>Promotion</li>
-                    <li>Contact-Us</li>
+                <ul class="text-xl flex gap-10">
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Accueil</li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Catégorie</li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Promotion</li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Contact-Us</li>
                 </ul>
             </div>
-            <div>
-                <img src="" alt="" srcset="">
-            </div>
-            <div>
-                <button>Login</button>
+            <div class="flex items-center gap-2">
+                <img src="/images/Panier.png" alt="PANIER" ><span class= "border-2 border-black bg-black hover:bg-transparent rounded-2xl flex justify-center items-center text-white hover:text-black text-center w-[90px] h-[33px] ">Login</span>
             </div>
         </div>
         <!-- Burger menu dans mobile -->
