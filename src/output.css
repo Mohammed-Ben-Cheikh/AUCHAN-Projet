@@ -955,6 +955,10 @@ video {
   .sm\:flex-col {
     flex-direction: column;
   }
+
+  .sm\:items-center {
+    align-items: center;
+  }
 }
 
 @media (min-width: 768px) {
@@ -988,6 +992,10 @@ video {
 
   .md\:w-1\/2 {
     width: 50%;
+  }
+
+  .md\:flex-col {
+    flex-direction: column;
   }
 
   .md\:items-start {
@@ -1052,6 +1060,11 @@ video {
 
   .md\:text-start {
     text-align: start;
+  }
+
+  .md\:text-red-600 {
+    --tw-text-opacity: 1;
+    color: rgb(220 38 38 / var(--tw-text-opacity));
   }
 }
 
