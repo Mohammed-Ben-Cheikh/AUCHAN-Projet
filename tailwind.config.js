@@ -1,8 +1,15 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./dist/*.html"],
+ /** @type {import('tailwindcss').Config} */
+ module.exports = {
+  content: ["./pages/*.html", "./js/*.js"],
   theme: {
-    extend: {},
+    fontFamily: {
+      'sans': ['Comfortaa', 'sans-serif'],
+    },
+    extend: {
+      colors: {
+        'LimeGreen': "#4EB528"
+      }
+    },
   },
   plugins: [],
 }
