@@ -678,6 +678,10 @@ video {
   height: 2rem;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .w-12 {
   width: 3rem;
 }
@@ -720,6 +724,10 @@ video {
 
 .w-1\/4 {
   width: 25%;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .cursor-pointer {
