@@ -7,7 +7,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        'LimeGreen': "#4EB528"
+        'LimeGreen': "#4EB528",
+        'CoralRed': "#FC4544"
       }
     },
   },
