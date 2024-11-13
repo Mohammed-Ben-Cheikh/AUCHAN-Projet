@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./pages/**/*.html"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'sans': ["Comfortaa", "sans-serif"]
+      }
+    },
   },
   plugins: [],
 }
