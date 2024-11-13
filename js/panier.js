@@ -166,8 +166,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     
-
-
-    document.getElementById('addToCart').addEventListener('click', (event) =>  addProduct(event));
+    document.getElementById('productSuggestion').addEventListener('click', (event) => {
+        let classes = Array.from(event.target.classList);
+       if (classes.includes('addToCart')) {
+            addProduct(event);
+        }
+    });
 
 });
