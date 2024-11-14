@@ -1,14 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // UPDATE: addProduct should take the Image , Title ,  PRice of the Element Where the Event Happen
+    // UPDATE add Product should Verifier if the Product added is already in the cart 
+    // FEAT: Display the total Price of the cart
+    // FEAT: the price need to be adjusted when increment or decrement QUantity
+    // FEAT: the price should be recalculated onchange the sizes
     function addProduct(event) {
-        // I need to change the information with one where the event is trigger
-        // extract Product title 
-        // extract  image path
-        // extract price
-        // check if the card element is already in the cart incremenet the quatité
-        // 
-        let element = event.target.parentElement.parentElement.parentElement;
-        let productInfo = event.target.parentElement.parentElement;
+        let productInfo = event.target.parentElement.parentElement.parentElement;
+
+        let data =  {
+            title: productInfo.querySelector('.title').textContent,
+            price: productInfo.querySelector('.price').textContent,
+            image: productInfo.querySelector('.image').getAttribute('src')
+        };
+
+        let productPanier = document.getElementById('productPanier');
+        console.log(productPanier);
+
         let mainDiv = document.createElement('div');
         mainDiv.className = 'flex justify-center bg-slate-100 py-6 rounded-[1rem]';
     
@@ -32,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         imageContainer.className = 'bg-white w-18 mx-2 h-36 flex items-center justify-center rounded-[2rem] shadow-lg';
         let image = document.createElement('img');
         image.className = 'w-52 rounded-[1rem]';
-        image.src = '../images/produit_poulet2.jpg';
+        image.src = data.image;
         image.alt = 'Chiken';
         imageContainer.appendChild(image);
     
@@ -49,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
         titleContainer.className = 'flex justify-between';
         let title = document.createElement('p');
         title.className = 'title text-lg';
-        title.textContent = 'Entier Chicken';
+        title.textContent = data.title;
         let trashIcon = document.createElement('span');
         trashIcon.className = 'text-4xl';
         trashIcon.id = "remove";
@@ -100,7 +108,8 @@ document.addEventListener('DOMContentLoaded', function () {
         priceContainer.className = 'flex justify-between lg:w-[20rem]';
         let price = document.createElement('p');
         price.className = 'text-red-600 text-2xl';
-        price.textContent = '$3.99';
+        price.setAttribute('data-price', data.price);
+        price.textContent = data.price;
         let quantityContainer = document.createElement('div');
         quantityContainer.className = 'bg-white px-2 border-2 border-solid border-orange-500 rounded-[1rem] shadow-lg';
         let decrButton = document.createElement('button');
@@ -133,28 +142,32 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
         mainDiv.appendChild(innerDiv);
-        console.log("Hello: ", select);
     
         document.getElementById('productPanier').appendChild(mainDiv);
     
     
-        incrButton.addEventListener('click', () => increment(quantitySpan));
-        decrButton.addEventListener('click', () => decrement(quantitySpan));
+        incrButton.addEventListener('click', () => increment(quantitySpan, price));
+        decrButton.addEventListener('click', () => decrement(quantitySpan, price));
         trashIcon.addEventListener('click', (event) => removeItem(event));
 
     }
 
-    function increment(quantite) {
+    function increment(quantite, price) {
+        let originalPrice = parseFloat(price.dataset.price);
+        console.log(originalPrice);
         quantite.textContent = parseInt(quantite.textContent) + 1;
-        // recalculer le prix apres la quantité est incrementé
+        price.textContent = (originalPrice *  parseFloat(quantite.textContent)).toFixed(2);
     }
 
-    function decrement(quantite) {
+    function decrement(quantite, price) {
         let currentQuantite = parseInt(quantite.textContent);
         if (currentQuantite > 0) {
+            let originalPrice = parseFloat(price.dataset.price);
+            console.log(originalPrice);
             quantite.textContent = currentQuantite - 1;
-            // recalculer le prix apres que la quantite est decrementé
+            price.textContent = (originalPrice *  parseFloat(quantite.textContent)).toFixed(2);
             }
+            // when reach to Zero Remove the element
     }
 
     function removeItem(event) {
@@ -165,6 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("La Cart est Vide");
         }
     }
+    
     
     document.getElementById('productSuggestion').addEventListener('click', (event) => {
         let classes = Array.from(event.target.classList);
