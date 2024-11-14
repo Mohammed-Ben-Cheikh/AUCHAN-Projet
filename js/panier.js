@@ -1,10 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // UPDATE: addProduct should take the Image , Title ,  PRice of the Element Where the Event Happen
+    // UPDATE: addProduct should take the Image , Title ,  PRice of the Element Where the Event Happen (DONE)
+    // FEAT: the price need to be adjusted when increment or decrement QUantity (DONE)
+    // FEAT: the price should be recalculated onchange the sizes (DONE)
+
     // UPDATE add Product should Verifier if the Product added is already in the cart 
-    // FEAT: Display the total Price of the cart
-    // FEAT: the price need to be adjusted when increment or decrement QUantity
-    // FEAT: the price should be recalculated onchange the sizes
+    // FEAT: Display the total Price of the cart)
+    // UPDATE: Update the price Immédialty After the Size Changes.
+    // BUG: if Quantity is Already Incremeneted, modifiying Szif will cause a calculation Bug.
+
     function addProduct(event) {
         let productInfo = event.target.parentElement.parentElement.parentElement;
 
@@ -173,23 +177,20 @@ document.addEventListener('DOMContentLoaded', function () {
         let target = event.target.parentElement.parentElement;
         let ClientSize = event.target.value;
         let price = target.querySelector('.price');
-        // Update the price Immédialty After the Size Changes
+        let originalPrice = parseFloat(price.getAttribute('data-original-price'));
+    
         switch(ClientSize) {
             case '1':
-                price.setAttribute('data-price', price.getAttribute('data-original-price'))
-                console.log("S");
+                price.setAttribute('data-price', originalPrice);
                 break;
             case '2':
-                price.setAttribute('data-price', parseFloat(price.textContent * 1.10));
-                console.log("M");
+                price.setAttribute('data-price', (originalPrice * 1.10));
                 break;
             case '3':
-                price.setAttribute('data-price', parseFloat(price.textContent * 1.20));
-                console.log("L");
+                price.setAttribute('data-price', (originalPrice * 1.20));
                 break;
             case '4':
-                price.setAttribute('data-price', parseFloat(price.textContent * 1.30));
-                console.log("XL");
+                price.setAttribute('data-price', (originalPrice * 1.30));
                 break;
         }
     }
