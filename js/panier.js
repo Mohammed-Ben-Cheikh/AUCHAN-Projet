@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         let productPanier = document.getElementById('productPanier');
-        console.log(productPanier);
 
         let mainDiv = document.createElement('div');
         mainDiv.className = 'flex justify-center bg-slate-100 py-6 rounded-[1rem]';
@@ -107,8 +106,9 @@ document.addEventListener('DOMContentLoaded', function () {
         let priceContainer = document.createElement('div');
         priceContainer.className = 'flex justify-between lg:w-[20rem]';
         let price = document.createElement('p');
-        price.className = 'text-red-600 text-2xl';
+        price.className = 'price text-red-600 text-2xl';
         price.setAttribute('data-price', data.price);
+        price.setAttribute('data-original-price', data.price);
         price.textContent = data.price;
         let quantityContainer = document.createElement('div');
         quantityContainer.className = 'bg-white px-2 border-2 border-solid border-orange-500 rounded-[1rem] shadow-lg';
@@ -148,13 +148,13 @@ document.addEventListener('DOMContentLoaded', function () {
     
         incrButton.addEventListener('click', () => increment(quantitySpan, price));
         decrButton.addEventListener('click', () => decrement(quantitySpan, price));
+        select.addEventListener('change', (event) => PricebySize(event));
         trashIcon.addEventListener('click', (event) => removeItem(event));
 
     }
 
     function increment(quantite, price) {
         let originalPrice = parseFloat(price.dataset.price);
-        console.log(originalPrice);
         quantite.textContent = parseInt(quantite.textContent) + 1;
         price.textContent = (originalPrice *  parseFloat(quantite.textContent)).toFixed(2);
     }
@@ -163,11 +163,35 @@ document.addEventListener('DOMContentLoaded', function () {
         let currentQuantite = parseInt(quantite.textContent);
         if (currentQuantite > 0) {
             let originalPrice = parseFloat(price.dataset.price);
-            console.log(originalPrice);
             quantite.textContent = currentQuantite - 1;
             price.textContent = (originalPrice *  parseFloat(quantite.textContent)).toFixed(2);
             }
             // when reach to Zero Remove the element
+    }
+
+    function PricebySize(event) {
+        let target = event.target.parentElement.parentElement;
+        let ClientSize = event.target.value;
+        let price = target.querySelector('.price');
+        // Update the price Immédialty After the Size Changes
+        switch(ClientSize) {
+            case '1':
+                price.setAttribute('data-price', price.getAttribute('data-original-price'))
+                console.log("S");
+                break;
+            case '2':
+                price.setAttribute('data-price', parseFloat(price.textContent * 1.10));
+                console.log("M");
+                break;
+            case '3':
+                price.setAttribute('data-price', parseFloat(price.textContent * 1.20));
+                console.log("L");
+                break;
+            case '4':
+                price.setAttribute('data-price', parseFloat(price.textContent * 1.30));
+                console.log("XL");
+                break;
+        }
     }
 
     function removeItem(event) {
