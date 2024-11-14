@@ -3,11 +3,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // UPDATE: addProduct should take the Image , Title ,  PRice of the Element Where the Event Happen (DONE)
     // FEAT: the price need to be adjusted when increment or decrement QUantity (DONE)
     // FEAT: the price should be recalculated onchange the sizes (DONE)
+    // BUG: if Quantity is Already Incremeneted, modifiying Szif will cause a calculation Bug.(DONE)
+      // UPDATE add Product should Verifier if the Product added is already in the cart  (DONE)
 
-    // UPDATE add Product should Verifier if the Product added is already in the cart 
+  
     // FEAT: Display the total Price of the cart)
-    // UPDATE: Update the price Immédialty After the Size Changes.
-    // BUG: if Quantity is Already Incremeneted, modifiying Szif will cause a calculation Bug.
+    // BUG: Update the price Immédialty After the Size Changes.
+
 
     function addProduct(event) {
         let productInfo = event.target.parentElement.parentElement.parentElement;
@@ -18,10 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
             image: productInfo.querySelector('.image').getAttribute('src')
         };
 
-        let productPanier = document.getElementById('productPanier');
 
         let mainDiv = document.createElement('div');
-        mainDiv.className = 'flex justify-center bg-slate-100 py-6 rounded-[1rem]';
+        mainDiv.className = 'cartContent flex justify-center bg-slate-100 py-6 rounded-[1rem]';
+        mainDiv.setAttribute('data-token', data.title);
     
     
         let innerDiv = document.createElement('div');
@@ -149,14 +151,13 @@ document.addEventListener('DOMContentLoaded', function () {
     
         document.getElementById('productPanier').appendChild(mainDiv);
     
-    
         incrButton.addEventListener('click', () => increment(quantitySpan, price));
         decrButton.addEventListener('click', () => decrement(quantitySpan, price));
         select.addEventListener('change', (event) => PricebySize(event));
         trashIcon.addEventListener('click', (event) => removeItem(event));
 
     }
-
+ 
     function increment(quantite, price) {
         let originalPrice = parseFloat(price.dataset.price);
         quantite.textContent = parseInt(quantite.textContent) + 1;
@@ -165,12 +166,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function decrement(quantite, price) {
         let currentQuantite = parseInt(quantite.textContent);
-        if (currentQuantite > 0) {
+        if (currentQuantite > 1) {
             let originalPrice = parseFloat(price.dataset.price);
             quantite.textContent = currentQuantite - 1;
             price.textContent = (originalPrice *  parseFloat(quantite.textContent)).toFixed(2);
+            } else {
+                removeItem(event);
             }
-            // when reach to Zero Remove the element
     }
 
     function PricebySize(event) {
@@ -178,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let ClientSize = event.target.value;
         let price = target.querySelector('.price');
         let originalPrice = parseFloat(price.getAttribute('data-original-price'));
-    
+        
         switch(ClientSize) {
             case '1':
                 price.setAttribute('data-price', originalPrice);
@@ -203,12 +205,34 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("La Cart est Vide");
         }
     }
+
+    function CartVerification(event) {
+        let newProduct = event.target.parentElement.parentElement.parentElement;
+        let newProductTitle = newProduct.querySelector('.title').textContent;
+        let productExists = false;
+    
+        let ProductCart = document.querySelectorAll('.cartContent');
+    
+        ProductCart.forEach((element) => {
+            if(newProductTitle == element.dataset.token) {
+                productExists = true;
+                let quantity = element.querySelector('#quantite');
+                let price = element.querySelector('.price');
+                increment(quantity, price);
+            }
+        });
+    
+        if(!productExists) {
+            console.log("Not Found! Adding to cart.");
+            addProduct(event);
+        }
+    }
     
     
     document.getElementById('productSuggestion').addEventListener('click', (event) => {
         let classes = Array.from(event.target.classList);
        if (classes.includes('addToCart')) {
-            addProduct(event);
+            CartVerification(event);
         }
     });
 
