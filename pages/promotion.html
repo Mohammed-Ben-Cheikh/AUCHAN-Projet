@@ -34,17 +34,17 @@
             <img src="/images/image_processing20200627-13177-1pswkl1.gif" alt="hourglass" class="w-[20rem] mt-[3%] h-[16rem] max-md:hidden">
                     
                     <h3 class="text-[6rem] mb-[1.5rem] max-md:hidden">:</h3>
-                    <p class="bg-[#333333] w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:hidden">0</p>
-                    <p class="bg-[#333333]  w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:hidden">0</p>
+                    <p id="day1" class="bg-[#333333] w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:hidden">0</p>
+                    <p id="day2" class="bg-[#333333]  w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:hidden">0</p>
                     <h3 class="text-[3rem] mb-[1.5rem] max-md:hidden">:</h3>
-                    <p class="bg-[#333333]  w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:h-[5.7rem] max-md:w-[14%] max-md:text-[4rem]">3</p>
-                    <p class="bg-[#333333]  w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:h-[5.7rem] max-md:w-[14%] max-md:text-[4rem]">4</p>
+                    <p id="hour1" class="bg-[#333333]  w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:h-[5.7rem] max-md:w-[14%] max-md:text-[4rem]">3</p>
+                    <p id="hour2" class="bg-[#333333]  w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:h-[5.7rem] max-md:w-[14%] max-md:text-[4rem]">4</p>
                     <h3 class="text-[3rem] mb-[1.5rem] max-md:text-[2rem]">:</h3>
-                    <p class="bg-[#333333]  w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:h-[5.7rem] max-md:w-[14%] max-md:text-[4rem]">5</p>
-                    <p class="bg-[#333333]  w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:h-[5.7rem] max-md:w-[14%] max-md:text-[4rem]">6</p>
+                    <p id="minute1" class="bg-[#333333]  w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:h-[5.7rem] max-md:w-[14%] max-md:text-[4rem]">5</p>
+                    <p id="minute2" class="bg-[#333333]  w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:h-[5.7rem] max-md:w-[14%] max-md:text-[4rem]">6</p>
                     <h3 class="text-[3rem] mb-[1.5rem] max-md:text-[2rem]  ">:</h3>
-                    <p class="bg-[#333333]  w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:h-[5.7rem] max-md:w-[14%] max-md:text-[4rem]">7</p>
-                    <p class="bg-[#333333]  w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:h-[5.7rem] max-md:w-[14%] max-md:text-[4rem]">8</p>
+                    <p id="second1" class="bg-[#333333]  w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:h-[5.7rem] max-md:w-[14%] max-md:text-[4rem]">7</p>
+                    <p id="second2" class="bg-[#333333]  w-[5rem] h-[9rem] text-white rounded-2xl text-[6rem] flex justify-center items-start max-md:h-[5.7rem] max-md:w-[14%] max-md:text-[4rem]">8</p>
     
             </div>
             <div class="flex absolute top-[14.2rem] left-[23.6rem] gap-[3rem] items-center max-md:static max-md:mt-[-2rem] max-md:gap-[1rem] flex-wrap">
@@ -213,7 +213,7 @@
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M64.807 17.1448L58.9168 14.6668L52.8716 17.4255L54.1457 11.8407L49.4227 8.03214L56.095 7.07612L59.1994 1.96322L62.0657 6.94479L68.7233 7.60453L63.8016 11.641L64.807 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M84.5011 17.1448L78.6109 14.6668L72.5657 17.4255L73.8398 11.8407L69.1168 8.03214L75.7891 7.07612L78.8935 1.96322L81.7598 6.94479L88.4174 7.60453L83.4957 11.641L84.5011 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M104.196 17.1448L98.3054 14.6668L92.2603 17.4255L93.5344 11.8407L88.8113 8.03214L95.4836 7.07612L98.5881 1.96322L101.454 6.94479L108.112 7.60453L103.19 11.641L104.196 17.1448Z" fill="#D5D5D5"/>
-                      </svg>
+                    </svg>
                     <p class="max-md:text-[0.8rem] max-md:mt-[0.3rem]">(special offer)</p>
                     </div>
                     
