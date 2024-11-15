@@ -111,20 +111,29 @@ if (seconds < 10) {
     second2.textContent = seconds % 10;
 }
 
-const images = document.querySelectorAll('.carousel-item');
+let images = document.querySelectorAll('.carousel-item');
 let currentIndex = 0;
 
 
 function showNextImage() {
-    images[currentIndex].classList.add('hidden');
-    currentIndex = (currentIndex + 1) % images.length; 
-    images[currentIndex].classList.remove('hidden'); 
+    images[currentIndex].classList.remove('opacity-100');
+    images[currentIndex].classList.add('opacity-0');
+
+    let oldIndex = currentIndex;
+    setTimeout(() => {
+        images[oldIndex].classList.add('hidden');
+    }, 500);
+
+    currentIndex = (currentIndex + 1) % images.length;
+
+    setTimeout(() => {
+        images[currentIndex].classList.remove('hidden');
+        setTimeout(() => {
+            images[currentIndex].classList.add('opacity-100');
+            images[currentIndex].classList.remove('opacity-0');
+        }, 10);
+    }, 500);
+
 }
-
-
-images.forEach((img, index) => {
-    if (index !== 0) img.classList.add('hidden');
-});
-
 
 setInterval(showNextImage, 2000);
