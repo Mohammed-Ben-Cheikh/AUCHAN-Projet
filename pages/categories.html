@@ -27,9 +27,10 @@
             </div>
             <div>
                 <h3 class="text-lg font-semibold mb-2">Price Range</h3>
-                <input type="range" min="0" max="100" class="w-full">
+                <input id="range-input" type="range" value="0" min="0" max="100" class="w-full">
                 <div class="flex justify-between text-gray-500 text-sm">
                     <span>$0</span>
+                    <span id="range-area"></span>
                     <span>$100</span>
                 </div>
             </div>
@@ -39,8 +40,8 @@
         <main class="w-3/4 p-6">
             <!-- Search and Sort -->
             <div class="flex justify-between items-center mb-6">
-                <input type="text" placeholder="Search..." class="border rounded-lg p-2 w-1/2">
-                <select class="border rounded-lg p-2 w-1/4">
+                <input type="text" id="search" placeholder="Search..." class="border rounded-lg p-2 w-1/2">
+                <select class="select-tri border rounded-lg p-2 w-1/4">
                     <option>Trie Par Prix</option>
                     <option>Prix Croissant</option>
                     <option>Prix Décroissant</option>
