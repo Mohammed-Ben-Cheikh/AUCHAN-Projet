@@ -49,6 +49,13 @@ connection.onreadystatechange = function () {
             });
 
         }
+        showProducts(data.products)
+
+        document.getElementById("all").addEventListener("click", function () {
+
+            showProducts(data.products)
+        })
+
 
 
     }
