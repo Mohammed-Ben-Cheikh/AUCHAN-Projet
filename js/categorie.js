@@ -95,7 +95,7 @@ connection.onreadystatechange = function () {
         })
         document.querySelector(".select-tri").addEventListener("change", function (event) {
             let sortedProducts = [...data.products];
-            
+
             function triCroissant(product) {
                 let len = product.length;
                 for (let i = 0; i < len - 1; i++) {
@@ -106,6 +106,18 @@ connection.onreadystatechange = function () {
                     }
                 }
             }
+
+            function triDecroissant(product) {
+                let len = product.length;
+                for (let i = 0; i < len - 1; i++) {
+                    for (let j = 0; j < len - 1 - i; j++) {
+                        if (product[j].price < product[j + 1].price) {
+                            [product[j], product[j + 1]] = [product[j + 1], product[j]];
+                        }
+                    }
+                }
+            }
+
 
 
 
