@@ -62,6 +62,38 @@ connection.onreadystatechange = function () {
             console.log(ProductViande)
             showProducts(ProductViande)
         })
+        document.getElementById("Produits de Ménage").addEventListener("click", function () {
+            const ProductMenage = data.products.filter(function (item) {
+                return item.categories === "Produits de Ménage"
+            })
+            console.log(ProductMenage)
+            showProducts(ProductMenage)
+        })
+
+        document.getElementById("Charcuterie").addEventListener("click", function () {
+            const ProductCharcuterie = data.products.filter(function (item) {
+                return item.categories === "Charcuterie"
+            })
+            console.log(ProductCharcuterie)
+            showProducts(ProductCharcuterie
+            )
+        })
+
+        document.getElementById("Produits Laitiers").addEventListener("click", function () {
+            const ProductLaitier = data.products.filter(function (item) {
+                return item.categories === "Produits Laitiers"
+            })
+            console.log(ProductLaitier)
+            showProducts(ProductLaitier)
+        })
+        document.getElementById("Légumes et Fruits").addEventListener("click", function () {
+            const ProductLegume = data.products.filter(function (item) {
+                return item.categories === "Légumes et Fruits"
+            })
+            console.log(ProductLegume)
+            showProducts(ProductLegume)
+        })
+
 
 
 
