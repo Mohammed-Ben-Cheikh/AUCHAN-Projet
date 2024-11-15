@@ -93,6 +93,9 @@ connection.onreadystatechange = function () {
             console.log(ProductLegume)
             showProducts(ProductLegume)
         })
+        document.querySelector(".select-tri").addEventListener("change", function (event) {
+            let sortedProducts = [...data.products];
+
 
 
 
