@@ -55,6 +55,14 @@ connection.onreadystatechange = function () {
 
             showProducts(data.products)
         })
+        document.getElementById("viande").addEventListener("click", function () {
+            const ProductViande = data.products.filter(function (item) {
+                return item.categories === "Viande"
+            })
+            console.log(ProductViande)
+            showProducts(ProductViande)
+        })
+
 
 
 
