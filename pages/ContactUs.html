@@ -1,12 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Document</title>
+    <title>A-UCHAN Contact Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/output.css">
 </head>
-<body>
-    
+
+<body class="flex items-center justify-center min-h-screen w-[100vw]">
+
+    <div
+        class="border-4 items-center justify-center border-black rounded-[32px] flex flex-col md:flex-row bg-gray-100 shadow-md w-[90%] md:w-[85%] mx-auto p-3">
+
+        <!-- Left Side Information -->
+        <div class="p-8 pt-[.5rem] flex flex-col justify-around  md:gap-16 w-full md:w-1/3 h-[100%]">
+            <div class="flex">
+                <img class=" w-14 h-12" src="/images/LogoAuchan.png" alt="LogoAuchan">
+                <span class="mt-4 text-custom-16  font-bold">A-UCHAN</span>
+            </div>
+            <div class="mb-3 md:mb-20">
+                <ul class="text-gray-600">
+                    <li class="mb-4">
+                        <strong>Chat to us</strong><br>
+                        Our friendly team is here to help.<br>
+                        <span class="text-blue-500">hi@a-uchan.com</span>
+                    </li>
+                    <li class="mb-4">
+                        <strong>Visit us</strong><br>
+                        Come say hello at our office HQ<br>
+                        100 Smith Street<br>
+                        Collingwood VIC 3066 AU
+                    </li>
+                    <li>
+                        <strong>Call us</strong><br>
+                        Mon-Fri from 8am to 5pm<br>
+                        +1 (555) 000-0000
+                    </li>
+                </ul>
+            </div>
+            <div class="flex items-center  justify-center sm:justify-start space-x-4 mt-4">
+                <a href="#" class="text-gray-500 hover:text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M20.7247 0H2.48697C1.82738 0 1.19481 0.261807 0.728415 0.727825C0.262019 1.19384 0 1.8259 0 2.48495L0 20.7079C0 21.367 0.262019 21.999 0.728415 22.465C1.19481 22.9311 1.82738 23.1929 2.48697 23.1929H9.59813V15.3078H6.33399V11.5964H9.59813V8.76773C9.59813 5.55024 11.5152 3.77298 14.4513 3.77298C15.8575 3.77298 17.3279 4.02355 17.3279 4.02355V7.18151H15.7078C14.1115 7.18151 13.6135 8.17134 13.6135 9.18655V11.5964H17.1772L16.6072 15.3078H13.6135V23.1929H20.7247C21.3843 23.1929 22.0169 22.9311 22.4833 22.465C22.9497 21.999 23.2117 21.367 23.2117 20.7079V2.48495C23.2117 1.8259 22.9497 1.19384 22.4833 0.727825C22.0169 0.261807 21.3843 0 20.7247 0Z"
+                            fill="black" />
+                    </svg></a>
+                <a href="#" class="text-gray-500 hover:text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M21.3519 0H3.1141C1.74109 0 0.627136 1.11305 0.627136 2.48495V20.7079C0.627136 22.0798 1.74109 23.1929 3.1141 23.1929H21.3519C22.7249 23.1929 23.8388 22.0798 23.8388 20.7079V2.48495C23.8388 1.11305 22.7249 0 21.3519 0ZM18.8183 8.22104C18.8286 8.366 18.8286 8.51613 18.8286 8.66109C18.8286 13.1495 15.409 18.3213 9.16054 18.3213C7.23314 18.3213 5.44563 17.7622 3.94309 16.7993C4.21769 16.8304 4.48193 16.8407 4.76172 16.8407C6.35234 16.8407 7.81343 16.3023 8.9792 15.3912C7.48702 15.3601 6.23317 14.3816 5.80313 13.0356C6.32643 13.1133 6.79792 13.1133 7.33676 12.9735C5.78241 12.6577 4.61664 11.291 4.61664 9.63953V9.59812C5.06741 9.85179 5.59589 10.0071 6.15027 10.0278C5.68419 9.71803 5.3021 9.29779 5.03812 8.80457C4.77413 8.31135 4.63645 7.7605 4.63737 7.20118C4.63737 6.56959 4.80317 5.98976 5.09849 5.4876C6.77201 7.54804 9.28489 8.89405 12.1034 9.03901C11.6216 6.73525 13.3469 4.86636 15.4194 4.86636C16.3986 4.86636 17.2794 5.27534 17.9012 5.93799C18.668 5.79304 19.4037 5.50831 20.0566 5.12003C19.8027 5.90693 19.269 6.56959 18.5644 6.98892C19.2483 6.91644 19.9115 6.7249 20.5229 6.46087C20.0617 7.13905 19.4814 7.73958 18.8183 8.22104Z"
+                            fill="black" />
+                    </svg></a>
+                <a href="#" class="text-gray-500 hover:text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M21.809 0H1.90811C0.996219 0 0.25531 0.750662 0.25531 1.67216V21.5207C0.25531 22.4422 0.996219 23.1929 1.90811 23.1929H21.809C22.7209 23.1929 23.467 22.4422 23.467 21.5207V1.67216C23.467 0.750662 22.7209 0 21.809 0ZM7.27063 19.8796H3.83032V8.81122H7.27581V19.8796H7.27063ZM5.55048 7.29954C4.44688 7.29954 3.55572 6.40392 3.55572 5.3064C3.55572 4.20888 4.44688 3.31327 5.55048 3.31327C6.64889 3.31327 7.54523 4.20888 7.54523 5.3064C7.54523 6.4091 6.65407 7.29954 5.55048 7.29954ZM20.1666 19.8796H16.7263V14.4955C16.7263 13.2117 16.7004 11.5602 14.9388 11.5602C13.1461 11.5602 12.8715 12.958 12.8715 14.4024V19.8796H9.43118V8.81122H12.7316V10.3229H12.7782C13.2393 9.45316 14.3637 8.53684 16.0372 8.53684C19.5189 8.53684 20.1666 10.8302 20.1666 13.8122V19.8796Z"
+                            fill="black" />
+                    </svg></a>
+                <a href="#" class="text-gray-500 hover:text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" width="27"
+                        height="18" viewBox="0 0 27 18" fill="none">
+                        <path
+                            d="M25.509 2.94554C25.2198 1.85722 24.3675 1.0001 23.2853 0.709222C21.3238 0.180664 13.4585 0.180664 13.4585 0.180664C13.4585 0.180664 5.59327 0.180664 3.63174 0.709222C2.54959 1.00015 1.6973 1.85722 1.40803 2.94554C0.882446 4.91817 0.882446 9.0339 0.882446 9.0339C0.882446 9.0339 0.882446 13.1496 1.40803 15.1223C1.6973 16.2106 2.54959 17.032 3.63174 17.3229C5.59327 17.8514 13.4585 17.8514 13.4585 17.8514C13.4585 17.8514 21.3238 17.8514 23.2853 17.3229C24.3675 17.032 25.2198 16.2106 25.509 15.1223C26.0346 13.1496 26.0346 9.0339 26.0346 9.0339C26.0346 9.0339 26.0346 4.91817 25.509 2.94554ZM10.8861 12.7707V5.29713L17.46 9.03399L10.8861 12.7707Z"
+                            fill="black" />
+                    </svg></a>
+                <a href="#" class="text-gray-500 hover:text-gray-700"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M5.30556 10.1572C5.76669 7.96219 7.24333 6.13472 9.22772 5.20286C9.41424 5.45654 10.6784 7.21153 11.8546 9.29268C8.53862 10.1728 5.62162 10.1624 5.30556 10.1572ZM16.9321 6.31591C15.1913 4.77317 12.8235 4.18818 10.58 4.73176C10.7769 4.99578 12.0618 6.7456 13.2224 8.87334C15.7405 7.92595 16.8026 6.49711 16.9321 6.31591ZM7.89097 17.1876C9.98935 18.8235 12.725 19.0875 15.0047 18.1194C14.9011 17.4982 14.4866 15.3342 13.4918 12.7561C10.637 13.7293 8.63188 15.6759 7.89097 17.1876ZM13.01 11.5861C12.8338 11.1823 12.6369 10.7836 12.4349 10.385C8.9013 11.4411 5.47136 11.3997 5.16049 11.3894C5.16049 11.4618 5.15531 11.5343 5.15531 11.6068C5.15531 13.4239 5.84441 15.0805 6.9739 16.3385C8.12413 14.3765 10.4505 12.3057 13.01 11.5861ZM14.8182 12.4299C15.7456 14.9718 16.1187 17.0426 16.1912 17.4723C17.7818 16.4007 18.9113 14.6974 19.2274 12.7302C18.9891 12.6525 17.0358 12.0727 14.8182 12.4299ZM13.7664 9.92427C14.0151 10.4316 14.1965 10.8458 14.3882 11.3117C16.7456 11.0166 19.0875 11.4877 19.3207 11.5395C19.3051 9.86732 18.7093 8.33494 17.7197 7.13388C17.5694 7.33578 16.3829 8.85263 13.7664 9.92427ZM23.8438 2.48495V20.7079C23.8438 22.0798 22.7299 23.1929 21.3569 23.1929H3.11911C1.74609 23.1929 0.632141 22.0798 0.632141 20.7079V2.48495C0.632141 1.11305 1.74609 0 3.11911 0H21.3569C22.7299 0 23.8438 1.11305 23.8438 2.48495ZM20.5279 11.5964C20.5279 7.03034 16.8078 3.31327 12.238 3.31327C7.66818 3.31327 3.9481 7.03034 3.9481 11.5964C3.9481 16.1625 7.66818 19.8796 12.238 19.8796C16.8078 19.8796 20.5279 16.1625 20.5279 11.5964Z"
+                            fill="black" />
+                    </svg></a>
+            </div>
+        </div>
+
+        <!-- Right Side Form -->
+        <div class="bg-[#BAFF66] p-8 w-[95%] md:w-2/3 rounded-[32px] m-2">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Got ideas? We've got the skills. Let's team up.</h2>
+            <p class="text-gray-600 mb-6">Tell us more about yourself and what you have in mind.</p>
+
+            <!-- Auto-fill Button -->
+            <button type="button" id="auto"
+                class="mb-4 px-4 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-700">Auto Fill</button>
+
+            <form id="contactForm" class="space-y-4">
+                <div>
+                    <input id="name" placeholder="Your name"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+                <div>
+                    <input id="email" placeholder="you@company.com"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+                <div>
+                    <textarea id="message" rows="4" placeholder="Tell us a little about the project..."
+                        class="w-full resize-none p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                </div>
+                <div class="flex gap-4">
+                    <div>
+                        <div
+                            class="flex items-center gap-2 p-1 transition-all duration-300 hover:bg-slate-200 rounded-lg">
+                            <input type="checkbox" id="chec-1" name="service" value="Website design" class="rounded">
+                            <label for="chec-1">Website design</label>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 p-1 transition-all duration-300 hover:bg-slate-200 rounded-lg">
+                            <input type="checkbox" id="chec-2" name="service" value="UX design"
+                                class="text-green-500 rounded">
+                            <label for="chec-2">UX design</label>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 p-1 transition-all duration-300 hover:bg-slate-200 rounded-lg">
+                            <input type="checkbox" id="chec-3" name="service" value="User research"
+                                class="text-green-500 rounded">
+                            <label for="chec-3">User research</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div
+                            class="flex items-center gap-2 p-1 transition-all duration-300 hover:bg-slate-200 rounded-lg">
+                            <input type="checkbox" id="chec-4" name="service" value="Content creation"
+                                class="text-green-500 rounded">
+                            <label for="chec-4">Content creation</label>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 p-1 transition-all duration-300 hover:bg-slate-200 rounded-lg">
+                            <input type="checkbox" id="chec-5" name="service" value="Strategy & consulting"
+                                class="text-green-500 rounded">
+                            <label for="chec-5">Strategy & consulting</label>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 p-1 transition-all duration-300 hover:bg-slate-200 rounded-lg">
+                            <input type="checkbox" id="chec-6" name="service" value="Other"
+                                class="text-green-500 rounded">
+                            <label for="chec-6">Other</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" id="submit" onclick="validation()"
+                    class="w-full py-3 bg-black text-white font-bold rounded-lg hover:bg-gray-800">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Alerte personnalisée -->
+<div id="customAlert" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center relative">
+        <!-- Bouton de fermeture en haut à droite -->
+        <span class="absolute top-2 right-2 text-gray-500 cursor-pointer text-xl" onclick="closeAlert()">×</span>
+        
+        <!-- Message de l'alerte -->
+        <p id="alertMessage" class="text-gray-800 mb-4"></p>
+        
+        <!-- Bouton OK -->
+        <button onclick="closeAlert()" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none">
+            OK
+        </button>
+    </div>
+</div>
+
+    <script src="/js/ContactUs.js"></script>
 </body>
+
 </html>
