@@ -117,6 +117,19 @@ connection.onreadystatechange = function () {
                     }
                 }
             }
+            
+            if (event.target.value === "Prix Croissant") {
+                triCroissant(sortedProducts);
+            } else if (event.target.value === "Prix Décroissant") {
+                triDecroissant(sortedProducts);
+            } else {
+                sortedProducts = data.products;
+            }
+
+            showProducts(sortedProducts);
+        });
+
+
 
 
 
