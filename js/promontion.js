@@ -137,3 +137,21 @@ function showNextImage() {
 }
 
 setInterval(showNextImage, 2000);
+
+function addtoLocaleStorage(event) {
+    console.log("hello!")
+    let localTable = JSON.parse(localStorage.getItem('cart')) || [];
+    let element = event.target.parentElement;
+    let data = {
+        title: element.querySelector('.title').textContent,
+        price: element.querySelector('.price').textContent,
+        image: element.querySelector('img').getAttribute('src')
+    }
+    localTable.push(data);
+
+    localStorage.setItem('cart', JSON.stringify(localTable));
+}
+
+
+document.querySelector('.products').addEventListener('click', (event) => addtoLocaleStorage(event));
+document.querySelector('.products2').addEventListener('click', (event) => addtoLocaleStorage(event));
