@@ -14,14 +14,14 @@ btn_page1.onclick=function(){
 
 let timeLeft = 60000;
 
-const day1 = document.getElementById('day1');
-const day2 = document.getElementById('day2');
-const hour1 = document.getElementById('hour1');
-const hour2 = document.getElementById('hour2');
-const minute1 = document.getElementById('minute1');
-const minute2 = document.getElementById('minute2');
-const second1 = document.getElementById('second1');
-const second2 = document.getElementById('second2');
+let day1 = document.getElementById('day1');
+let day2 = document.getElementById('day2');
+let hour1 = document.getElementById('hour1');
+let hour2 = document.getElementById('hour2');
+let minute1 = document.getElementById('minute1');
+let minute2 = document.getElementById('minute2');
+let second1 = document.getElementById('second1');
+let second2 = document.getElementById('second2');
 
 const timerInterval = setInterval(() => {
     let days = Math.floor(timeLeft / 86400); 
@@ -151,7 +151,6 @@ function addtoLocaleStorage(event) {
 
     localStorage.setItem('cart', JSON.stringify(localTable));
 }
-
 
 document.querySelector('.products').addEventListener('click', (event) => addtoLocaleStorage(event));
 document.querySelector('.products2').addEventListener('click', (event) => addtoLocaleStorage(event));
