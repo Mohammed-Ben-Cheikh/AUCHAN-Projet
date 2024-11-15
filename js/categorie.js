@@ -149,9 +149,20 @@ connection.onreadystatechange = function () {
 
 
         });
-
-
-
+        document.getElementById("search").addEventListener("keyup",function(){
+            const value = document.getElementById("search").value.toUpperCase();
+            let tableSearch = [];
+            let allProducts = [...data.products];
+            allProducts.forEach(element => {
+                const title = element.name.toUpperCase();
+                if(title.indexOf(value) > -1){
+                    tableSearch.push(element);
+                    showProducts(tableSearch);
+                }
+            });
+            
+        })
+    
 
     }
 }
