@@ -11,7 +11,7 @@ connection.onreadystatechange = function () {
             document.getElementById("products-container").innerHTML = '';
             data.forEach(element => {
                 document.getElementById("products-container").innerHTML += `
-                <div class="bg-white w-[18rem] flex flex-col justify-end gap-6 items-center rounded-[1rem] py-3 px-2">
+                <div id class="bg-white w-[18rem] flex flex-col justify-end gap-6 items-center rounded-[1rem] py-3 px-2">
                  <div>
                             <img class="lg:h-36 md:h-32 sm:h-28 h-242" src="../images/produit_poulet2.jpg" alt="MuscleMilk">
                         </div>
@@ -129,11 +129,26 @@ connection.onreadystatechange = function () {
             showProducts(sortedProducts);
         });
 
+        document.getElementById("range-input").addEventListener("change", function () {
+            const value = document.getElementById("range-input").value
+            document.getElementById("range-area").innerHTML = `0 - ${value}`
+            if (value == 0) {
+                showProducts(data.products)
+
+            } else {
+                let allProducts = [...data.products];
+                let sorted = []
+                allProducts.forEach(item => {
+                    if (item.price <= value) {
+                        sorted.push(item)
+                    }
+                })
+
+                showProducts(sorted)
+            }
 
 
-
-
-
+        });
 
 
 
