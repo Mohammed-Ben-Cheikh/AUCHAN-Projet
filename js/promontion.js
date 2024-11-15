@@ -110,3 +110,21 @@ if (seconds < 10) {
     second1.textContent = Math.floor(seconds / 10);
     second2.textContent = seconds % 10;
 }
+
+const images = document.querySelectorAll('.carousel-item');
+let currentIndex = 0;
+
+
+function showNextImage() {
+    images[currentIndex].classList.add('hidden');
+    currentIndex = (currentIndex + 1) % images.length; 
+    images[currentIndex].classList.remove('hidden'); 
+}
+
+
+images.forEach((img, index) => {
+    if (index !== 0) img.classList.add('hidden');
+});
+
+
+setInterval(showNextImage, 2000);
