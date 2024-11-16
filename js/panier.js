@@ -17,11 +17,12 @@ document.addEventListener('DOMContentLoaded', function () {
         let element = event.target.parentElement.parentElement.parentElement;
         let isExist = false;
 
-        data = {
+        let data = {
             title: element.querySelector('.title').textContent,
+            priceUnit: element.querySelector('.price').textContent,
             price: element.querySelector('.price').textContent,
             img: element.querySelector('.image').getAttribute('src'),
-            quantity: 1
+            quantity: 1,
         }
 
 
@@ -40,11 +41,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
  
-    function increment(quantite, price) {
-        // Update it in LocalStorage
+    function increment(element, quantite, price) {
+        let temp = JSON.parse(localStorage.getItem('cart'));
+
         let originalPrice = parseFloat(price.dataset.originalPrice);
         quantite.textContent = parseInt(quantite.textContent) + 1;
         price.textContent = "$ " + (originalPrice *  parseFloat(quantite.textContent)).toFixed(2);
+
+        temp.forEach((data) => {
+            if(data.title == element.title) {
+                data.quantity = parseInt(quantite.textContent);
+                data.price = (originalPrice *  parseFloat(quantite.textContent)).toFixed(2);
+            }
+        });
+
+        localStorage.setItem("cart" ,JSON.stringify(temp));
+
     }
 
     function decrement(quantite, price) {
@@ -53,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentQuantite > 1) {
             let originalPrice = parseFloat(price.dataset.price);
             quantite.textContent = currentQuantite - 1;
-            price.textContent = (originalPrice *  parseFloat(quantite.textContent)).toFixed(2);
+            price.textContent = "$ " + (originalPrice *  parseFloat(quantite.textContent)).toFixed(2);
             } else {
                 removeItem(event);
             }
@@ -63,14 +75,14 @@ document.addEventListener('DOMContentLoaded', function () {
         let target = event.target.parentElement.parentElement;
         let ClientSize = event.target.value;
         let price = target.querySelector('.price');
-        let originalPrice = parseFloat(price.getAttribute('data-original-price'));
+        let originalPrice = parseFloat(price.getAttribute('data-price-original'));
         
         switch(ClientSize) {
             case '1':
                 price.setAttribute('data-price', originalPrice);
                 break;
             case '2':
-                price.setAttribute('data-price', (originalPrice * 1.10));
+                price.setAttribute('data-price', (originalPrice * 1.10).toFixed(2));
                 break;
             case '3':
                 price.setAttribute('data-price', (originalPrice * 1.20));
@@ -82,12 +94,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function removeItem(event) {
+        let storage = JSON.parse(localStorage.getItem('cart'));
         let element = event.target.parentElement.parentElement.parentElement.parentElement.parentElement;
+        let title = element.dataset.token;
         if(element) {
             element.remove();
-        } else {
-            alert("La Cart est Vide");
+            storage.forEach((data, index) => {
+                console.log("Found")
+                if(title == data.title) {
+                    storage.splice(index, 1)
+                }
+            })
         }
+
+        localStorage.setItem("cart", JSON.stringify(storage));
     }
 
     /*function CartVerification(event) {
@@ -146,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let imageContainer = document.createElement('div');
         imageContainer.className = 'bg-white w-18 mx-2 h-36 flex items-center justify-center rounded-[2rem] shadow-lg';
         let image = document.createElement('img');
-        image.className = 'w-52 rounded-[1rem]';
+        image.className = 'w-52 h-40 rounded-[1rem]';
         image.src = element.img;
         image.alt = 'Chiken';
         imageContainer.appendChild(image);
@@ -223,9 +243,9 @@ document.addEventListener('DOMContentLoaded', function () {
         priceContainer.className = 'flex justify-between lg:w-[20rem]';
         let price = document.createElement('p');
         price.className = 'price text-red-600 text-2xl';
-        price.setAttribute('data-price', (element.price * element.quantity).toFixed(2));
-        price.setAttribute('data-original-price', element.price );
-        price.textContent = "$ " + (element.price * element.quantity).toFixed(2);
+        price.setAttribute('data-price', (element.priceUnit * element.quantity).toFixed(2));
+        price.setAttribute('data-original-price', element.priceUnit );
+        price.textContent = "$ " + (element.priceUnit * element.quantity).toFixed(2);
         let incrButton = document.createElement('button');
         incrButton.id = 'incr';
         incrButton.className = 'px-2';
@@ -253,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
         document.getElementById('productPanier').appendChild(mainDiv);
     
-        incrButton.addEventListener('click', () => increment(quantitySpan, price));
+        incrButton.addEventListener('click', () => increment(element ,quantitySpan, price));
         decrButton.addEventListener('click', () => decrement(quantitySpan, price));
         select.addEventListener('change', (event) => PricebySize(event));
         trashIcon.addEventListener('click', (event) => removeItem(event));
@@ -411,7 +431,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('productSuggestion').addEventListener('click', (event) => {
         let classes = Array.from(event.target.classList);
        if (classes.includes('addToCart')) {
-            CartVerification(event);
+            //CartVerification(event);
         }
     });
 
