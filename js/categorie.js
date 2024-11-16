@@ -52,9 +52,9 @@ connection.onreadystatechange = function () {
         function addtoLocaleStorage(event) {
             console.log("hello!")
             let localTable = JSON.parse(localStorage.getItem('cart')) || [];
-            let element = event.target.parentElement.parentElement;
+            let element = event.target.parentElement.parentElement.parentElement;
             console.log("aaaa",element);
-            console.log("bbbb",element.querySelector('.title').value);
+            console.log("bbbb",element.querySelector('.title').textContent);
             
             
             let data = {
