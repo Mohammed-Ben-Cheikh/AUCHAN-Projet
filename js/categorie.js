@@ -12,10 +12,10 @@ connection.onreadystatechange = function () {
                 document.getElementById("products-container").innerHTML += `
                 <div id class="bg-white w-[18rem] flex flex-col justify-end gap-6 items-center rounded-[1rem] py-3 px-2">
                  <div>
-                            <img class="lg:h-36 md:h-32 sm:h-28 h-242" src="../images/produit_poulet2.jpg" alt="MuscleMilk">
+                            <img class="imageP lg:h-36 md:h-32 sm:h-28 h-242" src="../images/produit_poulet2.jpg" alt="MuscleMilk">
                         </div>
                         <div class="text-center space-y-2">
-                            <span class="title text-lg md:text-2xl">${element.name}</span>
+                            <span class="title text-lg md:text-2xl" value="${element.name}">${element.name}</span>
                             <div class="flex mr-1">
                                 <div class="flex">
                                     <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -52,11 +52,15 @@ connection.onreadystatechange = function () {
         function addtoLocaleStorage(event) {
             console.log("hello!")
             let localTable = JSON.parse(localStorage.getItem('cart')) || [];
-            let element = event.target.parentElement;
+            let element = event.target.parentElement.parentElement;
+            console.log("aaaa",element);
+            console.log("bbbb",element.querySelector('.title').value);
+            
+            
             let data = {
                 title: element.querySelector('.title').textContent,
                 price: element.querySelector('.price').textContent,
-                image: element.querySelector('img').getAttribute('src')
+                image: element.querySelector('.imageP').getAttribute('src'),
             }
             localTable.push(data);
         
