@@ -5,7 +5,6 @@ connection.send()
 connection.onreadystatechange = function () {
     if (connection.readyState === 4 && connection.status === 200) {
         let data = JSON.parse(connection.responseText)
-        console.log(data);
         function showProducts(data) {
 
             document.getElementById("products-container").innerHTML = '';
@@ -16,7 +15,7 @@ connection.onreadystatechange = function () {
                             <img class="lg:h-36 md:h-32 sm:h-28 h-242" src="../images/produit_poulet2.jpg" alt="MuscleMilk">
                         </div>
                         <div class="text-center space-y-2">
-                            <span class="text-lg md:text-2xl">${element.name}</span>
+                            <span class="title text-lg md:text-2xl">${element.name}</span>
                             <div class="flex mr-1">
                                 <div class="flex">
                                     <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -37,9 +36,9 @@ connection.onreadystatechange = function () {
                                 </div>
                                 <span class="text-[12px] mt-1 ml-2">(1.2K Avis)</span>
                             </div>
-                            <span class="text-CoralRed text-xl md:text-3xl">${element.price}.00$</span>
+                            <span class=" price text-CoralRed text-xl md:text-3xl">${element.price}.00$</span>
                             <div>
-                                <button class="py-2 px-3 border-2 border-orange-500 rounded-[1rem] hover:bg-orange-500 hover:duration-500 hover:text-white">add to card</button>
+                                <button class="produts py-2 px-3 border-2 border-orange-500 rounded-[1rem] hover:bg-orange-500 hover:duration-500 hover:text-white ">Add to cart</button>
                             </div>
                         </div>
                     </div>
@@ -49,7 +48,22 @@ connection.onreadystatechange = function () {
             });
 
         }
-        showProducts(data.products)
+        showProducts(data.products);
+        function addtoLocaleStorage(event) {
+            console.log("hello!")
+            let localTable = JSON.parse(localStorage.getItem('cart')) || [];
+            let element = event.target.parentElement;
+            let data = {
+                title: element.querySelector('.title').textContent,
+                price: element.querySelector('.price').textContent,
+                image: element.querySelector('img').getAttribute('src')
+            }
+            localTable.push(data);
+        
+            localStorage.setItem('cart', JSON.stringify(localTable));
+        }
+        
+        document.querySelector('.product-container').addEventListener('click', (event) => addtoLocaleStorage(event));
 
         document.getElementById("all").addEventListener("click", function () {
 
@@ -59,14 +73,14 @@ connection.onreadystatechange = function () {
             const ProductViande = data.products.filter(function (item) {
                 return item.categories === "Viande"
             })
-            console.log(ProductViande)
+            
             showProducts(ProductViande)
         })
         document.getElementById("Produits de Ménage").addEventListener("click", function () {
             const ProductMenage = data.products.filter(function (item) {
                 return item.categories === "Produits de Ménage"
             })
-            console.log(ProductMenage)
+            
             showProducts(ProductMenage)
         })
 
@@ -74,7 +88,7 @@ connection.onreadystatechange = function () {
             const ProductCharcuterie = data.products.filter(function (item) {
                 return item.categories === "Charcuterie"
             })
-            console.log(ProductCharcuterie)
+           
             showProducts(ProductCharcuterie
             )
         })
@@ -83,14 +97,14 @@ connection.onreadystatechange = function () {
             const ProductLaitier = data.products.filter(function (item) {
                 return item.categories === "Produits Laitiers"
             })
-            console.log(ProductLaitier)
+            
             showProducts(ProductLaitier)
         })
         document.getElementById("Légumes et Fruits").addEventListener("click", function () {
             const ProductLegume = data.products.filter(function (item) {
                 return item.categories === "Légumes et Fruits"
             })
-            console.log(ProductLegume)
+            
             showProducts(ProductLegume)
         })
         document.querySelector(".select-tri").addEventListener("change", function (event) {
@@ -143,7 +157,6 @@ connection.onreadystatechange = function () {
                         sorted.push(item)
                     }
                 })
-
                 showProducts(sorted)
             }
 
@@ -162,7 +175,5 @@ connection.onreadystatechange = function () {
             });
             
         })
-    
-
     }
 }
