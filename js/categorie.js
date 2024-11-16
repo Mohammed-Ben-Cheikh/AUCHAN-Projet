@@ -63,7 +63,7 @@ connection.onreadystatechange = function () {
             localStorage.setItem('cart', JSON.stringify(localTable));
         }
         
-        document.querySelector('.product-container').addEventListener('click', (event) => addtoLocaleStorage(event));
+        document.querySelector('.products').addEventListener('click', (event) => addtoLocaleStorage(event));
 
         document.getElementById("all").addEventListener("click", function () {
 
