@@ -17,7 +17,7 @@
                 <span class="mt-4 text-custom-20  font-bold">A-UCHAN</span>
             </div>
             <div class="hidden sm:flex  justify-center">
-                <input id="searchBar" class="border rounded-full py-2 px-4 w-64 border-black" type="text" placeholder="Search...">
+                <input class="searchBar border rounded-full py-2 px-4 w-64 border-black" type="text" placeholder="Search...">
             </div>
             <div class="hidden sm:flex ">
                 
@@ -44,6 +44,7 @@
                     <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Accueil</li>
                     <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Catégorie</li>
                     <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Promotion</li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Panier</li>                  
                     <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Contact-Us</li>
                 </ul>
             </div>
@@ -64,11 +65,24 @@
         </div>
         <!-- search de mobile -->
         <div class="sm:hidden flex justify-center">
-            <input id="searchBar" class="border rounded-full py-2 px-4 w-64 border-black" type="text" placeholder="Search...">
+            <input  class="searchBar border rounded-full py-2 px-4 w-64 border-black" type="text" placeholder="Search...">
         </div>
         <script src="/js/header.js"></script>
     </header>
 
+    <!-- Content -->
+
+    <!-- Hero page -->
+    <section>
+
+        <div class="carousel-promotion flex items-center justify-center">
+            <img class="carousel-item opacity-100 transition-all duration-500" src="/images/Checkers.png" alt="Checkers">
+            <img class="carousel-item opacity-0 hidden transition-all duration-500" src="/images/Poster3.png" alt="Poster">
+        </div>
+
+    </section>
+
+    <!-- products -->
     <div class="flex flex-col lg:flex-row">
         <!-- Sidebar -->
         <aside class="w-full lg:w-1/4 p-6 bg-white border-r lg:sticky lg:top-0 lg:h-screen overflow-y-auto">
@@ -110,8 +124,10 @@
                     <option>Prix Croissant</option>
                     <option>Prix Décroissant</option>
                 </select>
-                <button id="flex-btn" >Flex</button>
-                <button id="grid-btn" >Grid</button>
+                <div class="flex items-center">
+                    <img id="flex-btn" src="/images/grid.png" alt="Grid"/>
+                    <img id="grid-btn" src="/images//list.png" alt="Liste"/>
+                </div>
             </div>
 
             <!-- Product Suggestions -->

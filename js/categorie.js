@@ -27,7 +27,7 @@ connection.onreadystatechange = function () {
                 document.getElementById("products-container-flex").innerHTML += `
                     <div class="bg-white shadow-md rounded-lg p-4 flex  w-5/6">
                         <div class="">
-                            <img class="imageP h-48 w-72" src="${element.image}" alt="${element.name}"/>
+                            <img class="imageP" src="${element.image}" alt="${element.name}"/>
                         </div>
                         <div class="flex justify-around w-3/4 ">
                             <div class="flex flex-col justify-between">
@@ -279,6 +279,36 @@ connection.onreadystatechange = function () {
                 }
             });
             
-        })
+        });
+
+        // Slide
+        
+        let images = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
+
+
+function showNextImage() {
+    images[currentIndex].classList.remove('opacity-100');
+    images[currentIndex].classList.add('opacity-0');
+
+    let oldIndex = currentIndex;
+    setTimeout(() => {
+        images[oldIndex].classList.add('hidden');
+    }, 500);
+
+    currentIndex = (currentIndex + 1) % images.length;
+
+    setTimeout(() => {
+        images[currentIndex].classList.remove('hidden');
+        setTimeout(() => {
+            images[currentIndex].classList.add('opacity-100');
+            images[currentIndex].classList.remove('opacity-0');
+        }, 10);
+    }, 500);
+
+}
+
+setInterval(showNextImage, 2000);
+
     }
 }
