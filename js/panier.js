@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // BUG: Incremenet & Decrement should Update the data-price (DONE)
     // FEAT: Add select All function(DONE)
     // BUG: tracking selected Product Price(DONE)
+    // BUG: Update the price Immédialty After the Size Changes.(DONE)
 
-    // BUG: Update the price Immédialty After the Size Changes.
+    // size change should change the price in realtime
 
 
 
@@ -56,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
  
     function increment(event, element, quantite, price) {
         let temp = JSON.parse(localStorage.getItem('cart'));
-
+        console.log("Hello", price);
         let originalPrice = parseFloat(price.dataset.priceBysize);
         quantite.textContent = parseInt(quantite.textContent) + 1;
         price.textContent = "$ " + (originalPrice *  parseFloat(quantite.textContent)).toFixed(2);
@@ -108,23 +109,19 @@ document.addEventListener('DOMContentLoaded', function () {
         let ClientSize = event.target.value;
         let price = target.querySelector('.price');
         let originalPrice = price.getAttribute('data-original-price');
-        
+
         switch(ClientSize) {
             case '1':
-                price.setAttribute('data-price-bysize', originalPrice).toFixed(2);
-                console.log(price);
+                price.setAttribute('data-price-bysize', originalPrice);
                 break;
             case '2':
                 price.setAttribute('data-price-bysize', (originalPrice * 1.10).toFixed(2));
-                console.log(price);
                 break;
             case '3':
                 price.setAttribute('data-price-bysize', (originalPrice * 1.20).toFixed(2));
-                console.log(price);
                 break;
             case '4':
                 price.setAttribute('data-price-bysize', (originalPrice * 1.30).toFixed(2));
-                console.log(price);
                 break;
         }
     }
@@ -230,10 +227,10 @@ function CartVerification(data) {
         let selectContainer = document.createElement('div');
         let select = document.createElement('select');
         select.className = 'px-8 text-lg text-center text-white bg-[LimeGreen] rounded-[1rem]';
-        let sizes = ['S', 'M', 'L', 'XL'];
+        let sizes = ['select Size', 'S', 'M', 'L', 'XL'];
         sizes.forEach((size, index) => {
             let option = document.createElement('option');
-            option.value = index + 1;
+            option.value = index;
             option.textContent = `Size : ${size}`;
             select.appendChild(option);
         });
@@ -306,15 +303,14 @@ function CartVerification(data) {
         mainDiv.appendChild(innerDiv);
     
         document.getElementById('productPanier').appendChild(mainDiv);
-    
+
         incrButton.addEventListener('click', (event) => increment(event ,element ,quantitySpan, price));
         decrButton.addEventListener('click', () => decrement(element, quantitySpan, price));
         select.addEventListener('change', (event) => PricebySize(event));
         trashIcon.addEventListener('click', (event) => removeItem(event));
         document.querySelectorAll('.checkbox').forEach((checkbox) => {
             checkbox.addEventListener('change', (event) => countTotalSelection(event));
-        });
-        
+        });    
     }
 
     function countCart() {
