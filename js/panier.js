@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // FEAT: Display the total Price of the cart)
     // BUG: Update the price Immédialty After the Size Changes.
 
+
     loadFromStorage();
 
     function addtoLocaleStorage(event) {
@@ -26,19 +27,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
 
-        localStorageTable.forEach((element) => {
-            if(element.title == data.title) {
-                element.quantity += 1;
-                isExist = true;
+        localStorageTable.forEach((obj) => {
+            if(obj.title == data.title) {
+                obj.quantity += 1;
+                isExist = true;          
             }
         });
 
         if(!isExist) {
             localStorageTable.push(data);
+            //addProduct(data);
         }
 
         localStorage.setItem("cart" , JSON.stringify(localStorageTable));
-
+        //CartVerification(event);
     }
  
     function increment(element, quantite, price) {
@@ -59,13 +61,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    function decrement(quantite, price) {
-        // Update it in LocalStorage
+    function decrement(element, quantite, price) {
+        let temp = JSON.parse(localStorage.getItem('cart'));
+
         let currentQuantite = parseInt(quantite.textContent);
         if (currentQuantite > 1) {
-            let originalPrice = parseFloat(price.dataset.price);
+            let originalPrice = parseFloat(price.dataset.originalPrice);
             quantite.textContent = currentQuantite - 1;
             price.textContent = "$ " + (originalPrice *  parseFloat(quantite.textContent)).toFixed(2);
+
+            temp.forEach((data) => {
+                if(element.title == data.title) {
+                    data.quantity = parseInt(data.quantity) - 1;
+                    data.price = (originalPrice *  parseFloat(quantite.textContent)).toFixed(2);
+                }
+            });
+            localStorage.setItem('cart', JSON.stringify(temp));
+
             } else {
                 removeItem(event);
             }
@@ -100,7 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if(element) {
             element.remove();
             storage.forEach((data, index) => {
-                console.log("Found")
                 if(title == data.title) {
                     storage.splice(index, 1)
                 }
@@ -110,9 +121,9 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem("cart", JSON.stringify(storage));
     }
 
-    /*function CartVerification(event) {
-        let newProduct = event.target.parentElement.parentElement.parentElement;
-        let newProductTitle = newProduct.querySelector('.title').textContent;
+    function CartVerification(event) {
+        newProduct = event.target.parentElement.parentElement.parentElement;
+        let newProductTitle = element.querySelector('.title').textContent;
         let productExists = false;
     
         let ProductCart = document.querySelectorAll('.cartContent');
@@ -130,11 +141,10 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("Not Found! Adding to cart.");
             addProduct(event);
         }
-    }*/
+    }
 
 
     function loadFromStorage() {
-        console.log("hello")
         let sotrage = JSON.parse(localStorage.getItem('cart')) || []
 
         sotrage.map((element) => {
@@ -274,13 +284,13 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('productPanier').appendChild(mainDiv);
     
         incrButton.addEventListener('click', () => increment(element ,quantitySpan, price));
-        decrButton.addEventListener('click', () => decrement(quantitySpan, price));
+        decrButton.addEventListener('click', () => decrement(element, quantitySpan, price));
         select.addEventListener('change', (event) => PricebySize(event));
         trashIcon.addEventListener('click', (event) => removeItem(event));
 
     }
 
-    /*function addProduct(event) {
+    /*function showAtTime(event) {
         let productInfo = event.target.parentElement.parentElement.parentElement;
 
         let data =  {
