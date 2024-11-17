@@ -75,7 +75,7 @@
         </div>
 
         <!-- Right Side Form -->
-        <div class="bg-[#BAFF66] p-8 w-[95%] md:w-2/3 rounded-[32px] m-2">
+        <div class="bg-[#bfff3f] p-8 w-[95%] md:w-2/3 rounded-[32px] m-2">
             <h2 class="text-3xl font-bold text-gray-800 mb-4">Got ideas? We've got the skills. Let's team up.</h2>
             <p class="text-gray-600 mb-6">Tell us more about yourself and what you have in mind.</p>
 
@@ -138,27 +138,28 @@
                     </div>
                 </div>
 
-                <button type="submit" id="submit" onclick="validation()"
+                <button type="reset" id="submit" onclick="validation()"
                     class="w-full py-3 bg-black text-white font-bold rounded-lg hover:bg-gray-800">Submit</button>
             </form>
         </div>
     </div>
 
     <!-- Alerte personnalisée -->
-<div id="customAlert" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
-    <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center relative">
-        <!-- Bouton de fermeture en haut à droite -->
-        <span class="absolute top-2 right-2 text-gray-500 cursor-pointer text-xl" onclick="closeAlert()">×</span>
-        
-        <!-- Message de l'alerte -->
-        <p id="alertMessage" class="text-gray-800 mb-4"></p>
-        
-        <!-- Bouton OK -->
-        <button onclick="closeAlert()" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none">
-            OK
-        </button>
+    <div id="customAlert" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center relative">
+            <!-- Bouton de fermeture en haut à droite -->
+            <span class="absolute top-2 right-2 text-gray-500 cursor-pointer text-xl" onclick="closeAlert()">×</span>
+
+            <!-- Message de l'alerte -->
+            <p id="alertMessage" class="text-gray-800 mb-4"></p>
+
+            <!-- Bouton OK -->
+            <button onclick="closeAlert()"
+                class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none">
+                OK
+            </button>
+        </div>
     </div>
-</div>
 
     <script src="/js/ContactUs.js"></script>
 </body>
