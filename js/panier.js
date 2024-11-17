@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorageTable.forEach((obj) => {
             if(obj.title == data.title) {
                 obj.quantity += 1;
+                obj.price = parseFloat(obj.priceUnit * obj.quantity).toFixed(2);
                 isExist = true;          
             }
         });
