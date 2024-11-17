@@ -14,7 +14,7 @@
         <nav class="container border-b-2 pb-4 m-4  flex justify-between sm:justify-around">
             <div class="flex">
                 <img class=" w-12 h-12 sm:w-16 sm:h-16" src="/images/LogoAuchan.png" alt="LogoAuchan">
-                <span class="mt-4 text-custom-20  font-bold">A-UCHAN</span>
+                <span class="mt-4 text-custom-16  font-bold">A-UCHAN</span>
             </div>
             <div class="hidden sm:flex  justify-center">
                 <input class="searchBar border rounded-full py-2 px-4 w-64 border-black" type="text" placeholder="Search...">
@@ -41,33 +41,33 @@
         <div class="sm:flex justify-around hidden container m-auto">
             <div >
                 <ul class="text-xl flex gap-10">
-                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Accueil</li>
-                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Catégorie</li>
-                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Promotion</li>
-                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Panier</li>                  
-                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Contact-Us</li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer"><a href="/index.html">Accueil</a></li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer"><a href="/pages/categories.html">Catégorie</a></li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer"> <a href="/pages/promotion.html">Promotion</a></li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer"><a href="/pages/panier.html">Panier</a></li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer"><a href="/pages/ContactUs.html">Contact-Us</a></li>
                 </ul>
             </div>
             <div class="flex items-center gap-2">
-                <a href=""><img src="/images/Panier.png" alt="PANIER" ></a><span class= "border-6  border-black bg-black hover:bg-transparent rounded-2xl flex justify-center items-center text-white hover:text-black text-center w-[90px] h-[33px] ">Login</span>
+                <img src="/images/Panier.png" alt="PANIER" ><span class= "border-6  border-black bg-black hover:bg-transparent rounded-2xl flex justify-center items-center text-white hover:text-black text-center w-[90px] h-[33px] ">Login</span>
             </div>
         </div>
         <!-- Burger menu dans mobile -->
         <div id="menu" class="hidden items-center justify-center   top-24 fixed inset-0 z-50">
             <ul class="border-2 mx-5 py-3  flex flex-col gap-10 text-2xl border-black rounded-3xl bg-white relative z-50 text-center justify-center ">
-                <li><a href="#">Accueil</a></li>
-                <li><a href="">Catégorie</a></li>
-                <li><a href="">Promotion</a></li>
-                <li><a href="">Panier</a></li>
-                <li><a href="">Contact-Us</a></li>
+                <li><a href="/index.html">Accueil</a></li>
+                <li><a href="/pages/categories.html">Catégorie</a></li>
+                <li><a href="/pages/promotion.html">Promotion</a></li>
+                <li><a href="/pages/panier.html">Panier</a></li>
+                <li><a href="/pages/ContactUs.html">Contact-Us</a></li>
                 <li><a href="">Search</a></li>
             </ul>
         </div>
         <!-- search de mobile -->
         <div class="sm:hidden flex justify-center">
-            <input  class="searchBar border rounded-full py-2 px-4 w-64 border-black" type="text" placeholder="Search...">
+            <input class="searchBar border rounded-full py-2 px-4 w-64 border-black" type="text" placeholder="Search...">
         </div>
-        <script src="/js/header.js"></script>
+        
     </header>
 
     <!-- Content -->
@@ -207,7 +207,8 @@
                 <a href="#" class="hover:text-gray-500">Privacy Policy</a>
             </div>
         </div>
-    </footer>
+    </footer>  
+    
     
 
     <script src="/js/categorie.js"></script>
