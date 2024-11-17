@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     loadFromStorage();
     countCart();
+    countTotalPrice();
+
     function addtoLocaleStorage(event) {
         let localStorageTable = JSON.parse(localStorage.getItem('cart')) || [];
         let element = event.target.parentElement.parentElement.parentElement;
@@ -442,6 +444,19 @@ document.addEventListener('DOMContentLoaded', function () {
         let count = cartContainer.length;
 
         document.querySelector('.count').textContent = count;
+    }
+
+    function countTotalPrice() {
+        let storage = JSON.parse(localStorage.getItem('cart'));
+        let priceContainer = document.querySelector('.totalprice');
+        let total = 0;
+
+        storage.forEach((data) => {
+            total += parseFloat(data.price);
+        });
+
+        priceContainer.textContent = total
+        console.log(total);
     }
     
     
