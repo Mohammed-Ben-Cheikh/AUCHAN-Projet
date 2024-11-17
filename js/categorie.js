@@ -78,7 +78,7 @@ connection.onreadystatechange = function () {
         
         document.querySelector('.products').addEventListener('click', (event) => addtoLocaleStorage(event));
 
-        document.getElementById("viande").addEventListener("click", function () {
+        document.getElementById("Viande").addEventListener("click", function () {
             const ProductViande = data.products.filter(function (item) {
                 return item.categories === "Viande"
             })

@@ -4,30 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrousel</title>
+    <title>Catégorie</title>
     <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-gray-100">
-
-    <div class="flex">
-        <!-- Sidebar -->
-        <aside class="w-1/4 p-4  bg-white border-r">
-            <h2 class="text-xl font-bold mb-4">Filter By</h2>
-            <div class="mb-6">
-                <h3 class="text-lg font-semibold mb-2">Catégories</h3>
-                <ul class="space-y-2">
-                    <li><a id="all" href="#" class="text-blue-600">All</a></li>
-                    <li><a id="viande" href="#" class="text-blue-600">Viande et Charcuterie</a></li>
-                    <li><a id="Légumes et Fruits" href="#" class="text-blue-600">Légumes et Fruits</a></li>
-                    <li><a id="Charcuterie" href="#" class="text-blue-600">Charcuterie</a></li>
-                    <li><a id="Produits de Ménage" href="#" class="text-blue-600">Produit Menager</a></li>
-                    <li><a id="Produits Laitiers" href="#" class="text-blue-600">Produits Laitiers</a></li>
+    <header class="sm:container sm:m-auto w-full">
+        <nav class="container border-b-2 pb-4 m-4  flex justify-between sm:justify-around">
+            <div class="flex">
+                <img class=" w-12 h-12 sm:w-16 sm:h-16" src="/images/LogoAuchan.png" alt="LogoAuchan">
+                <span class="mt-4 text-custom-20  font-bold">A-UCHAN</span>
+            </div>
+            <div class="hidden sm:flex  justify-center">
+                <input id="searchBar" class="border rounded-full py-2 px-4 w-64 border-black" type="text" placeholder="Search...">
+            </div>
+            <div class="hidden sm:flex ">
+                
+                    <img  class=" w-12 h-12" src="/images/Phone2.png" alt="phone" >
+                
+                <div>
+                    <p class="text-custom-gray">Get in Touch</p>
+                    <p class="font-bold text-custom-15">+212 45 34 67 87</p>
+                </div>
+            </div>
+            <!-- burger menu icone in mobile -->
+            <div class="sm:hidden">
+                <svg id="icone" class="w-6 h-6 mt-4 mr-4 sm:hidden  text-black" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </div>
+        </nav>
+        <!-- quick link -->
+        <div class="sm:flex justify-around hidden container m-auto">
+            <div >
+                <ul class="text-xl flex gap-10">
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Accueil</li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Catégorie</li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Promotion</li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Contact-Us</li>
                 </ul>
             </div>
+            <div class="flex items-center gap-2">
+                <a href=""><img src="/images/Panier.png" alt="PANIER" ></a><span class= "border-6  border-black bg-black hover:bg-transparent rounded-2xl flex justify-center items-center text-white hover:text-black text-center w-[90px] h-[33px] ">Login</span>
+            </div>
+        </div>
+        <!-- Burger menu dans mobile -->
+        <div id="menu" class="hidden items-center justify-center   top-24 fixed inset-0 z-50">
+            <ul class="border-2 mx-5 py-3  flex flex-col gap-10 text-2xl border-black rounded-3xl bg-white relative z-50 text-center justify-center ">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="">Catégorie</a></li>
+                <li><a href="">Promotion</a></li>
+                <li><a href="">Panier</a></li>
+                <li><a href="">Contact-Us</a></li>
+                <li><a href="">Search</a></li>
+            </ul>
+        </div>
+        <!-- search de mobile -->
+        <div class="sm:hidden flex justify-center">
+            <input id="searchBar" class="border rounded-full py-2 px-4 w-64 border-black" type="text" placeholder="Search...">
+        </div>
+        <script src="/js/header.js"></script>
+    </header>
+
+    <div class="flex flex-col lg:flex-row">
+        <!-- Sidebar -->
+        <aside class="w-full lg:w-1/4 p-6 bg-white border-r lg:sticky lg:top-0 lg:h-screen overflow-y-auto">
+            <h2 class="text-2xl font-bold mb-8 text-gray-800">Filter By</h2>
+            
+            <!-- Catégories -->
+            <div class="mb-10">
+                <h3 class="text-lg font-semibold mb-4 text-gray-700">Catégories</h3>
+                <ul class="space-y-4 text-gray-600">
+                    <li><a id="Viande"  href="#" class="hover:text-blue-600">Viande</a></li>
+                    <li><a  id="Charcuterie" href="#" class="hover:text-blue-600">Charcuterie</a></li>
+                    <li><a id="Légumes et Fruits" href="#" class="hover:text-blue-600">Légumes et Fruits</a></li>
+                    <li><a id="Produits de Ménage" href="#" class="hover:text-blue-600">Produit Ménager</a></li>
+                    <li><a id="Produits Laitiers" href="#" class="hover:text-blue-600">Laiterie et Œuf</a></li>
+                </ul>
+            </div>
+            
+            <!-- Price Range -->
             <div>
-                <h3 class="text-lg font-semibold mb-2">Price Range</h3>
-                <input id="range-input" type="range" value="0" min="0" max="100" class="w-full">
+                <h3 class="text-lg font-semibold mb-4 text-gray-700">Price Range</h3>
+                <div class="mb-4">
+                    <input id="range-input" type="range" value="50" min="0" max="100" class=" w-full">
+                </div>
                 <div class="flex justify-between text-gray-500 text-sm">
                     <span>$0</span>
                     <span id="range-area"></span>
@@ -37,42 +101,96 @@
         </aside>
 
         <!-- Main Content -->
-        <main class="w-3/4 p-6">
+        <main class="w-full lg:w-3/4 p-6">
             <!-- Search and Sort -->
-            <div class="flex justify-between items-center mb-6">
-                <input type="text" id="search" placeholder="Search..." class="border rounded-lg p-2 w-1/2">
-                <select class="select-tri border rounded-lg p-2 w-1/4">
+            <div class="flex flex-col sm:flex-row sm:justify-between items-center mb-6 gap-4">
+                <input type="text" id="search" placeholder="Search..." class="border rounded-lg p-2 w-full sm:w-1/2">
+                <select class="select-tri border rounded-lg p-2 w-full sm:w-1/4">
                     <option>Trie Par Prix</option>
                     <option>Prix Croissant</option>
                     <option>Prix Décroissant</option>
                 </select>
             </div>
 
-            
-   <!-- Produtct Suggestion-->
-    <section>
-        <div class="px-2 py-6">
-            <div class="bg-slate-200 px-1 py-3 rounded-[1rem]">
-                <div class="py-4">
-                    <div  id="products-container" class="products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
-                    
-                    </div>
+            <!-- Product Suggestions -->
+            <div class="container mx-auto">
+                <div id="products-container" class="products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Les produits seront ajoutés ici dynamiquement -->
                 </div>
-
-            </div>
-        </div>
-    </section>
-                <!-- Ajoutez d'autres produits de manière similaire -->
             </div>
 
             <!-- Pagination -->
-            <div class="flex justify-center mt-8">
-                <button class="bg-gray-200 text-gray-700 rounded-l px-3 py-1">1</button>
-                <button class="bg-gray-200 text-gray-700 px-3 py-1">2</button>
-                <button class="bg-gray-200 text-gray-700 rounded-r px-3 py-1">3</button>
+            <div class="flex justify-center items-center space-x-2 mt-8">
+                
+                <button id="prev"  class="flex items-center justify-center w-10 h-10 rounded border border-gray-300 text-gray-600 hover:bg-gray-100">
+                    <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+            
+                
+                <button id="page-numbers" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg"></button>
+
+            
+                
+                <button  id="next"  class="flex items-center justify-center w-10 h-10 rounded border border-gray-300 text-gray-600 hover:bg-gray-100">
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
             </div>
+            
         </main>
     </div>
+
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-around px-4">
+            <div class="w-full sm:w-auto mb-6 sm:mb-0">
+                <div class="flex items-center justify-center sm:justify-start mb-4">
+                    <img src="/images/LogoAuchan.png" alt="Logo" class="w-8 h-8 mr-2">
+                    <span class="text-xl font-bold">A-UCHAN</span>
+                </div>
+                <p class="text-sm text-center sm:w-60 sm:text-left">
+                    Situé au cœur du quartier, notre magasin d'alimentation propose une large gamme de produits frais.
+                </p>
+            </div>
+            <div class="w-full sm:w-auto mb-6 sm:mb-0 text-center sm:text-left">
+                <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-gray-500">Testimonials</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Home page</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Returns & exchanges</a></li>
+                </ul>
+            </div>
+            <div class="w-full sm:w-auto text-center sm:text-left">
+                <h3 class="text-lg font-semibold mb-4">Quick Link</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-gray-500">Accueil</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Catégorie</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Promotion</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Panier</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Contact-Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-4 text-center sm:flex sm:flex-row sm:justify-around">
+            <div class="w-full sm:w-auto flex flex-col items-center sm:items-start mb-4 sm:mb-0">
+                <p class="text-sm">© All rights reserved Made by <a href="#" class="text-orange-500">CodeShogun</a></p>
+            </div>
+            <div class="flex justify-center space-x-4 mb-4 sm:mb-0">
+                <img src="/images/visa.png" alt="Visa" class="w-8 h-8">
+                <img src="/images/mastercard.png" alt="MasterCard" class="w-8 h-8">
+                <img src="/images/paypal.png" alt="PayPal" class="w-8 h-8">
+            </div>
+            <div class="flex justify-center space-x-8 text-sm">
+                <a href="#" class="hover:text-gray-500">Terms & condition</a>
+                <a href="#" class="hover:text-gray-500">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+    
+
     <script src="/js/categorie.js"></script>
 </body>
 
