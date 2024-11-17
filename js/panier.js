@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         switch(ClientSize) {
             case '1':
-                price.setAttribute('data-price-bysize', originalPrice);
+                price.setAttribute('data-price-bysize', originalPrice);                
                 break;
             case '2':
                 price.setAttribute('data-price-bysize', (originalPrice * 1.10).toFixed(2));
