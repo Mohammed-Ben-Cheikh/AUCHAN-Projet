@@ -11,13 +11,13 @@
 <body>
     
     <header class="sm:container sm:m-auto w-full">
-        <nav class="container border-b-2 pb-4 my-4  flex justify-between sm:justify-around">
+        <nav class="container border-b-2 pb-4 m-4  flex justify-between sm:justify-around">
             <div class="flex">
                 <img class=" w-12 h-12 sm:w-16 sm:h-16" src="/images/LogoAuchan.png" alt="LogoAuchan">
                 <span class="mt-4 text-custom-16  font-bold">A-UCHAN</span>
             </div>
             <div class="hidden sm:flex  justify-center">
-                <input id="searchBar" class="border rounded-full py-2 px-4 w-64 border-black" type="text" placeholder="Search...">
+                <input class="searchBar border rounded-full py-2 px-4 w-64 border-black" type="text" placeholder="Search...">
             </div>
             <div class="hidden sm:flex ">
                 
@@ -41,10 +41,11 @@
         <div class="sm:flex justify-around hidden container m-auto">
             <div >
                 <ul class="text-xl flex gap-10">
-                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Accueil</li>
-                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Catégorie</li>
-                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Promotion</li>
-                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer">Contact-Us</li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer"><a href="/index.html">Accueil</a></li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer"><a href="/pages/categories.html">Catégorie</a></li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer"> <a href="/pages/promotion.html">Promotion</a></li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer"><a href="/pages/panier.html">Panier</a></li>
+                    <li class="pb-2 border-b-2 border-transparent hover:border-orange-500 cursor-pointer"><a href="/pages/ContactUs.html">Contact-Us</a></li>
                 </ul>
             </div>
             <div class="flex items-center gap-2">
@@ -54,34 +55,34 @@
         <!-- Burger menu dans mobile -->
         <div id="menu" class="hidden items-center justify-center   top-24 fixed inset-0 z-50">
             <ul class="border-2 mx-5 py-3  flex flex-col gap-10 text-2xl border-black rounded-3xl bg-white relative z-50 text-center justify-center ">
-                <li><a href="#">Accueil</a></li>
-                <li><a href="">Catégorie</a></li>
-                <li><a href="">Promotion</a></li>
-                <li><a href="">Panier</a></li>
-                <li><a href="">Contact-Us</a></li>
+                <li><a href="/index.html">Accueil</a></li>
+                <li><a href="/pages/categories.html">Catégorie</a></li>
+                <li><a href="/pages/promotion.html">Promotion</a></li>
+                <li><a href="/pages/panier.html">Panier</a></li>
+                <li><a href="/pages/ContactUs.html">Contact-Us</a></li>
                 <li><a href="">Search</a></li>
             </ul>
         </div>
         <!-- search de mobile -->
         <div class="sm:hidden flex justify-center">
-            <input id="searchBar" class="border rounded-full py-2 px-4 w-64 border-black" type="text" placeholder="Search...">
+            <input class="searchBar border rounded-full py-2 px-4 w-64 border-black" type="text" placeholder="Search...">
         </div>
+        
     </header>
-
     <section>
         <div class="bg-[#AD2E2D] flex text-white p-4 rounded-lg mx-[3%] my-[2%] max-md:flex max-md:h-[3.3rem] max-md:text-[0.7rem] max-md:items-center max-md:overflow-hidden">
             <img src="/images/icons8-shopping-cart-promotion-24.png" alt="icons" class="max-md:h-[2rem]">
             <p>Limited time! Get the best offers before running out we offer you the best!</p>
         </div>
         <div class="bg-[#D6A77A] mx-[3%] max-md:h-[36rem] flex relative max-md:block">
-                <img src="/images/Red Yellow Modern Simple Big Sale Promotion Instagram Post.png" alt="photo" class="w-[25rem] h-[22rem] max-md:h-[18rem] max-md:w-[100%] ">
+                <img src="/images/red-img.png" alt="photo" class="w-[25rem] h-[22rem] max-md:h-[18rem] max-md:w-[100%] ">
             <div class="carousel-promotion flex h-[15rem] w-[20rem] absolute left-[42rem] top-[3rem] max-md:static max-md:ml-[26%] max-md:h-[12rem]  max-md:mt-[3rem] ">
                 <img src="/images/img-1-slaider-removebg-preview.png" alt="photo over" class="carousel-item opacity-100 transition-all duration-500">
                 <img src="/images/Cleaning-machine-removebg-preview.png" alt="photo cleaning machine" class="carousel-item opacity-0 hidden transition-all duration-500">
-                <img src="/images/KINDERKRAFT4-removebg-preview.png" alt="photo kinderkrafit" class="carousel-item opacity-0 hidden transition-all duration-500">
-                <img src="/images/Smartphone-removebg-preview.png" alt="photo smartphone" class="carousel-item opacity-0 hidden transition-all duration-500">
-                <img src="/images/orange2-slaider-removebg-preview.png" alt="photo orange" class="carousel-item opacity-0 hidden transition-all duration-500">
-                <img src="/images/grapes2-removebg-preview.png" alt="photo avoca" class="carousel-item opacity-0 hidden transition-all duration-500">
+                <img src="/images/bg-97060644-5105-4d40-90c2-c80e6f4c2b9d.png" alt="photo machin cafi" class="carousel-item opacity-0 hidden transition-all duration-500">
+                <img src="/images/laptop2-carosel4.png" alt="photo laptop" class="carousel-item opacity-0 hidden transition-all duration-500">
+                <img src="/images/bg-32a719b1-b281-4adf-9512-85bcb9d577f9.png" alt="photo ordenator" class="carousel-item opacity-0 hidden transition-all duration-500">
+                <img src="/images/bg-3df775bb-51af-48be-b2c5-31862d11d8ec.png" alt="photo frige" class="carousel-item opacity-0 hidden transition-all duration-500 ml-[2rem]">
             </div>
         </div>
     </section>
@@ -131,7 +132,7 @@
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-40%</p>
                     <img src="/images/cafi.jpg" alt="photo machin cafi" class="w-[9.5rem] ">
                     <p class="title">Coffee press</p>
-                    <p class="text-[#FC4544] price">$ 99.00</p>
+                    <p class="text-[#FC4544]">$ <span class="price">99.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -146,9 +147,9 @@
                 </div>
                 <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-50%</p>
-                    <img src="/images/watch2.png" alt="photo watch" class="w-[10rem] h-[25reme] mt-[3rem] mb-[1rem]">
-                    <p class="title">Wrist Watch</p>
-                    <p class="text-[#FC4544] price">$ 30.00</p>
+                    <img src="/images/LAIT6.jpg" alt="photo MILK" class="w-[8.5rem] mt-[rem] mb-[1rem]">
+                    <p class="title">Milk</p>
+                    <p class="text-[#FC4544]">$ <span class="price">10.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -165,7 +166,7 @@
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-60%</p>
                     <img src="/images/products_muscle-milk.png" alt="photo milk muscle" class="w-[8.5rem]">
                     <p class="title">Muscle Milk</p>
-                    <p class="text-[#FC4544] price">$ 10.00</p>
+                    <p class="text-[#FC4544] ">$ <span class="price">10.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none" class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -180,9 +181,9 @@
                 </div>
                 <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-70%</p>
-                    <img src="/images/ACTUEL1.jpg" alt="photo actuel" class="w-[9rem] mt-[2rem] mb-[1.4rem]">
-                    <p class="title">Actuel</p>
-                    <p class="text-[#FC4544] price">$ 150.00</p>
+                    <img src="/images/LAIT8.jpg" alt="photo actuel" class="w-[9rem] mt-[rem] mb-[0.6rem]">
+                    <p class="title">Formaage</p>
+                    <p class="text-[#FC4544] ">$ <span class="price">3.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -199,9 +200,9 @@
                <div class="flex justify-between mx-[1rem] flex-wrap">
                 <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-10%</p>
-                    <img src="/images/Smartphone.jpg" alt="Smartphone" class="w-[7rem] mt-[3rem]">
-                    <p class="title">Smartphone</p>
-                    <p class="text-[#FC4544] price">$ 139.00</p>
+                    <img src="/images/Machine-de-nettoyage-de-vêtements3.jpg" alt="Clothes cleaning machine" class="w-[7rem] mt-[3rem]">
+                    <p class="title">Clothes cleaning machine</p>
+                    <p class="text-[#FC4544] ">$ <span class="price">139.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -216,9 +217,9 @@
                 </div>
                 <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-15%</p>
-                    <img src="/images/Iphone-11.jpeg" alt="iphone 11" class="w-[4rem] h-[6rem] mt-[3rem] mb-[1rem]">
-                    <p class="title">Iphone 11</p>
-                    <p class="text-[#FC4544] price">$ 169.00</p>
+                    <img src="/images/Machine-de-nettoyage-de-vêtements.png" alt="Clothes cleaning machine" class="w-[9rem] h-[6rem] mt-[4.4rem] mb-[1rem]">
+                    <p class="title">Clothes cleaning machine 2</p>
+                    <p class="text-[#FC4544] ">$ <span class="price">169.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -233,9 +234,9 @@
                 </div>
                 <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-19%</p>
-                    <img src="/images/Phone-compoigns.jpg" alt="photo phone compoigns" class="w-[8rem] mt-[5rem]  h-[5rem]">
-                    <p class="title">Phone compoigns</p>
-                    <p class="text-[#FC4544] price">$ 5.00</p>
+                    <img src="/images/MENNAGE14.jpg" alt="photo Air freshener" class="w-[6rem] mt-[4.3rem]  h-[7rem]">
+                    <p class="title">Air freshener</p>
+                    <p class="text-[#FC4544] ">$ <span class="price">5.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none" class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -250,9 +251,9 @@
                 </div>
                 <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-54%</p>
-                    <img src="/images/mobile4.jpg" alt="photo erphones" class="w-[6.7rem] mt-[2rem] mb-[1.4rem]">
-                    <p class="title">Earphones</p>
-                    <p class="text-[#FC4544] price">$ 7.00</p>
+                    <img src="/images/mennage16.jpg" alt="photo perfumed" class="w-[6.7rem] mt-[3.2rem] mb-[1.4rem]">
+                    <p class="title">perfumed</p>
+                    <p class="text-[#FC4544] ">$ <span class="price">7.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -271,7 +272,7 @@
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-33%</p>
                     <img src="/images/Cleaning-machine.jpg" alt="photo cleaning machine" class="w-[10rem]">
                     <p class="title">Cleaning machine</p>
-                    <p class="text-[#FC4544] price">$ 129.00</p>
+                    <p class="text-[#FC4544] ">$ <span class="price">129.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -288,7 +289,7 @@
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-49%</p>
                     <img src="/images/Frige.jpeg" alt="photo watch" class="w-[9rem] h-[25reme]  mb-[1rem]">
                     <p class="title">Frige</p>
-                    <p class="text-[#FC4544] price">$ 399.00</p>
+                    <p class="text-[#FC4544] ">$ <span class="price">399.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -305,7 +306,7 @@
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-19%</p>
                     <img src="/images/SamsungTv.jpeg" alt="photo samsugn tv" class="w-[10rem] mt-[11.4%]">
                     <p class="title">Samsung Tv</p>
-                    <p class="text-[#FC4544] price">$ 199.00</p>
+                    <p class="text-[#FC4544]">$ <span class="price">199.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none" class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -322,7 +323,7 @@
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-33%</p>
                     <img src="/images/Smart-Tv.jpeg" alt="photo smart tv" class="w-[9rem] mt-[2rem] mb-[1.4rem] max-md:mt-[0.9rem] ">
                     <p class="title">Smart Tv</p>
-                    <p class="text-[#FC4544] price">$ 299.00</p>
+                    <p class="text-[#FC4544] ">$ <span class="price">299.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -338,9 +339,9 @@
                <div class="flex justify-between mx-[1rem] flex-wrap">
                 <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-40%</p>
-                    <img src="/images/KINDERKRAFT1.jpg" alt="photo baby mode" class="w-[9.5rem]">
-                    <p class="title">Baby mode</p>
-                    <p class="price text-[#FC4544]">$ 59.00</p>
+                    <img src="/images/MENNAGE18.jpeg" alt="photo perfume" class="w-[8rem] mt-[1.5rem]">
+                    <p class="title">perfume2</p>
+                    <p class=" text-[#FC4544]">$ <span class="price">16.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -355,9 +356,9 @@
                 </div>
                 <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-18%</p>
-                    <img src="/images/KINDERKRAFT4.jpg" alt="photo baby mode" class="w-[5.5rem]  mt-[3rem] mb-[1rem]">
-                    <p class="title">Baby mode</p>
-                    <p class="text-[#FC4544] price">$ 99.00</p>
+                    <img src="/images/CHARCUTERIE8.jpeg" alt="photo CHARCUTERIE" class="w-[5.5rem]  mt-[3rem] mb-[1rem]">
+                    <p class="title">CHARCUTERIE</p>
+                    <p class="text-[#FC4544] ">$ <span class="price">19.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -374,7 +375,7 @@
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-20%</p>
                     <img src="/images/laptop1-carosel1.png" alt="photo laptop1" class="w-[9.5rem]">
                     <p class="title">Laptop</p>
-                    <p class="text-[#FC4544] price">$ 399.00</p>
+                    <p class="text-[#FC4544] ">$ <span class="price">399.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none" class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -391,7 +392,7 @@
                     <img src="/images/P2.jpg" alt="photo computer" class="w-[8rem]  mb-[1.4rem]">
                     <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-55%</p>
                     <p class="title">Computer</p>
-                    <p class="text-[#FC4544] price">$ 399.00</p>
+                    <p class="text-[#FC4544] ">$ <span class="price">399.00</span></p>
                     <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -417,9 +418,9 @@
             <div class="flex justify-between mx-[1rem] flex-wrap">
              <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                  <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-40%</p>
-                 <img src="/images/Meat4.png" alt="photo meat" class="w-[10rem] mt-[3rem]">
-                 <p class="title">Meat</p>
-                 <p class="text-[#FC4544] price">$ 15.00</p>
+                 <img src="/images/Meat4.png" alt="photo Kafta meat" class="w-[10rem] mt-[3rem]">
+                 <p class="title">Kafta meat</p>
+                 <p class="text-[#FC4544] ">$ <span class="price">15.00</span></p>
                  <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -434,9 +435,9 @@
              </div>
              <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                  <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-50%</p>
-                 <img src="/images/Meat1.jpg" alt="photo meat" class="w-[10rem] h-[25reme] mt-[3rem] mb-[1rem]">
-                 <p class="title">Meat</p>
-                 <p class="text-[#FC4544] price">$ 13.00</p>
+                 <img src="/images/Meat1.jpg" alt="photo beef" class="w-[10rem] h-[25reme] mt-[3rem] mb-[1rem]">
+                 <p class="title">Beef</p>
+                 <p class="text-[#FC4544] ">$ <span class="price">13.00</span></p>
                  <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -453,7 +454,7 @@
                  <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-60%</p>
                  <img src="/images/Meat2.jpg" alt="photo meat" class="w-[10rem] mt-[3.8rem]">
                  <p class="title">Meat</p>
-                 <p class="text-[#FC4544] price">$ 10.00</p>
+                 <p class="text-[#FC4544] ">$ <span class="price">10.00</span></p>
                  <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none" class="mt-[0.2rem] max-md:w-[5rem]">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -468,9 +469,9 @@
              </div>
              <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                  <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-70%</p>
-                 <img src="/images/Meat3.jpg" alt="photo meat" class="w-[9rem] mt-[2.8rem] mb-[1.4rem]">
-                 <p class="title">Meat</p>
-                 <p class="text-[#FC4544] price">$ 30.00</p>
+                 <img src="/images/Meat3.jpg" alt="photo venison" class="w-[9rem] mt-[2.8rem] mb-[1.4rem]">
+                 <p class="title">Venison</p>
+                 <p class="text-[#FC4544] ">$ <span class="price">30.00</span></p>
                  <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -487,9 +488,9 @@
             <div class="flex justify-between mx-[1rem] flex-wrap">
              <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                  <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-10%</p>
-                 <img src="/images/Chicken-meat1.jpg" alt="photo machin cafi" class="w-[7rem] mt-[3.2rem]">
-                 <p class="title">Chicken</p>
-                 <p class="text-[#FC4544] price">$ 9.00</p>
+                 <img src="/images/Chicken-meat1.jpg" alt="photo Chicken wings" class="w-[7rem] mt-[3.2rem]">
+                 <p class="title">Chicken wings</p>
+                 <p class="text-[#FC4544] ">$ <span class="price">9.00</span></p>
                  <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -506,7 +507,7 @@
                  <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-15%</p>
                  <img src="/images/Chicken-meat2.jpg" alt="photo chicken" class="w-[6rem] h-[6rem] mt-[3.2rem] mb-[1rem]">
                  <p class="title">Chicken</p>
-                 <p class="text-[#FC4544] price">$ 11.00</p>
+                 <p class="text-[#FC4544] ">$ <span class="price">11.00</span></p>
                  <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -521,9 +522,9 @@
              </div>
              <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                  <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-19%</p>
-                 <img src="/images/Chicken-meat3.jpg" alt="photo chicken" class="w-[9rem] mt-[5.1rem]  h-[5rem]">
-                 <p class="title">Chicken</p>
-                 <p class="text-[#FC4544] price">$ 8.00</p>
+                 <img src="/images/Chicken-meat3.jpg" alt="photo chicken thigh" class="w-[9rem] mt-[5.1rem]  h-[5rem]">
+                 <p class="title">Chicken thigh</p>
+                 <p class="text-[#FC4544] ">$ <span class="price">8.00</span></p>
                  <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none" class="mt-[0.2rem] max-md:w-[5rem]">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -539,8 +540,8 @@
              <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                  <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-54%</p>
                  <img src="/images/Chicken-meat4.jpg" alt="photo chicken" class="w-[6.7rem] mt-[2rem] mb-[1.4rem]">
-                 <p class="title">Chicken</p>
-                 <p class="text-[#FC4544] price">$ 12.00</p>
+                 <p class="title">Skinned Chicken</p>
+                 <p class="text-[#FC4544] ">$ <span class="price">12.00</span></p>
                  <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -557,9 +558,9 @@
             <div class="flex justify-between mx-[1rem] flex-wrap">
              <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                  <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-33%</p>
-                 <img src="/images/fish1.jpg" alt="photo fish" class="w-[10rem]">
-                 <p class="title">Fish</p>
-                 <p class="text-[#FC4544] price">$ 15.00</p>
+                 <img src="/images/fish1.jpg" alt="photo fish CROVET" class="w-[10rem]">
+                 <p class="title">Crovet</p>
+                 <p class="text-[#FC4544] ">$ <span class="price">15.00</span></p>
                  <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -574,9 +575,9 @@
              </div>
              <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                  <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-49%</p>
-                 <img src="/images/fish2.jpg" alt="photo fish" class="w-[9rem] h-[25reme]  mt-[3rem]">
-                 <p class="title">Fish</p>
-                 <p class="text-[#FC4544] price">$ 11.00</p>
+                 <img src="/images/fish2.jpg" alt="photo Fish banner" class="w-[9rem] h-[25reme]  mt-[3rem]">
+                 <p class="title">Fish banner</p>
+                 <p class="text-[#FC4544] ">$ <span class="price">11.00</span></p>
                  <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -592,8 +593,8 @@
              <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                  <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-19%</p>
                  <img src="/images/fish3.jpg" alt="photo fish" class="w-[9rem] mt-[6rem] max-md:mt-[4rem]">
-                 <p class="title">Fish</p>
-                 <p class="text-[#FC4544] price">$ 13.00</p>
+                 <p class="title">Sardine fish</p>
+                 <p class="text-[#FC4544] ">$ <span class="price">13.00</span></p>
                  <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none" class="mt-[0.2rem] max-md:w-[5rem]">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -610,7 +611,7 @@
                  <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-33%</p>
                  <img src="/images/fish4.jpeg" alt="photo fish" class="w-[9rem] mt-[4.6rem] mb-[1.4rem] max-md:mt-[2.5rem] ">
                  <p class="title">Fish</p>
-                 <p class="text-[#FC4544] price">$20.00</p>
+                 <p class="text-[#FC4544] ">$<span class="price">20.00</span></p>
                  <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -626,9 +627,9 @@
             <div class="flex justify-between mx-[1rem] flex-wrap">
              <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                  <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-40%</p>
-                 <img src="/images/grapes1.jpg" alt="photo fruits" class="w-[9.5rem] mt-[1.4rem] ">
-                 <p class="title">Fruits</p>
-                 <p class="text-[#FC4544] price">$ 3.00</p>
+                 <img src="/images/grapes1.jpg" alt="photo grapes" class="w-[9.5rem] mt-[1.4rem] ">
+                 <p class="title">Grapes</p>
+                 <p class="text-[#FC4544] ">$ <span class="price">3.00</span></p>
                  <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -643,9 +644,9 @@
              </div>
              <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                  <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-18%</p>
-                 <img src="/images/grapes2.jpeg" alt="photo frits" class="w-[5.5rem]  mt-[3rem] mb-[1rem]">
-                 <p class="title">Fruits</p>
-                 <p class="text-[#FC4544] price">$ 9.00</p>
+                 <img src="/images/grapes2.jpeg" alt="photo frits avoca" class="w-[5.5rem]  mt-[3rem] mb-[1rem]">
+                 <p class="title">Fruits avoca</p>
+                 <p class="text-[#FC4544] ">$ <span class="price">9.00</span></p>
                  <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -661,8 +662,8 @@
              <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
                  <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-20%</p>
                  <img src="/images/ORANGE3.jpg" alt="photo fruits orange" class="w-[9.5rem] mt-[3.3rem]">
-                 <p class="title">Fruits</p>
-                 <p class="text-[#FC4544] price">$ 2.00</p>
+                 <p class="title">Orange</p>
+                 <p class="text-[#FC4544] ">$ <span class="price">2.00</span></p>
                  <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none" class="mt-[0.2rem] max-md:w-[5rem]">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -676,10 +677,10 @@
                  <button class="border-solid border-4 border-[#FF7E08] px-[10%] rounded-[0.6rem] mb-[2%] text-[0.8rem] hover:text-[#ffff] hover:bg-[#FF7E08] transition-all duration-500 mt-[3%]">Add to card</button>
             </div>
             <div class="bg-[#ffff] w-[16rem] flex flex-col items-center rounded-2xl mt-[3rem] relative max-md:w-[11rem]">
-                <img src="/images/pomme4.png" alt="photo pomme" class="w-[8rem]  mt-[3rem]">
+                <img src="/images/pomme4.png" alt="photo apple" class="w-[8rem]  mt-[3rem]">
                 <p class="bg-red-500 w-[4rem] h-[1.7rem] text-center text-white absolute left-[12.4rem] top-[-0.7rem] rounded-lg text-[1.2rem] font-semibold max-md:left-[8rem]">-55%</p>
-                <p class="title">Fruits</p>
-                <p class="text-[#FC4544] price">$ 1.50</p>
+                <p class="title">Apple</p>
+                <p class="text-[#FC4544] ">$ <span class="price">1.50</span></p>
                 <div class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="112" height="22" viewBox="0 0 112 22" fill="none"  class="mt-[0.2rem] max-md:w-[5rem]">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3131 17.1448L14.4229 14.6668L8.37772 17.4255L9.6518 11.8407L4.92878 8.03214L11.6011 7.07612L14.7056 1.96322L17.5718 6.94479L24.2294 7.60453L19.3077 11.641L20.3131 17.1448Z" fill="#FFF700"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M42.9247 17.1448L37.0344 14.6668L30.9893 17.4255L32.2634 11.8407L27.5403 8.03214L34.2126 7.07612L37.3171 1.96322L40.1834 6.94479L46.841 7.60453L41.9192 11.641L42.9247 17.1448Z" fill="#FFF700"/>
@@ -704,48 +705,49 @@
         </div>
     </section>
         
-    <footer class="bg-black   text-white py-8">
-        <div class="container mx-auto flex justify-around px-4 lg:px-0">
-            <div class="w-1/4   ">
-                <div class="flex items-center mb-4">
+
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-around px-4">
+            <div class="w-full sm:w-auto mb-6 sm:mb-0">
+                <div class="flex items-center justify-center sm:justify-start mb-4">
                     <img src="/images/LogoAuchan.png" alt="Logo" class="w-8 h-8 mr-2">
                     <span class="text-xl font-bold">A-UCHAN</span>
                 </div>
-                <p class="text-sm">
+                <p class="text-sm text-center sm:w-60 sm:text-left">
                     Situé au cœur du quartier, notre magasin d'alimentation propose une large gamme de produits frais.
                 </p>
             </div>
-            <div class="">
+            <div class="w-full sm:w-auto mb-6 sm:mb-0 text-center sm:text-left">
                 <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:underline">Testimonials</a></li>
-                    <li><a href="#" class="hover:underline">Home page</a></li>
-                    <li><a href="#" class="hover:underline">Returns & exchanges</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Testimonials</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Home page</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Returns & exchanges</a></li>
                 </ul>
             </div>
-            <div class="">
+            <div class="w-full sm:w-auto text-center sm:text-left">
                 <h3 class="text-lg font-semibold mb-4">Quick Link</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:underline">Accueil</a></li>
-                    <li><a href="#" class="hover:underline">Catégorie</a></li>
-                    <li><a href="#" class="hover:underline">Promotion</a></li>
-                    <li><a href="#" class="hover:underline">Panier</a></li>
-                    <li><a href="#" class="hover:underline">Contact-Us</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Accueil</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Catégorie</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Promotion</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Panier</a></li>
+                    <li><a href="#" class="hover:text-gray-500">Contact-Us</a></li>
                 </ul>
             </div>
         </div>
-        <div class="border-t flex flex-row  justify-around border-gray-700 mt-8 pt-4 text-center">
-            <div class="flex flex-row items-center">
-                <p class="text-sm  ">© All rights reserved Made by <a href="#" class="text-orange-500">CodeShogun</a></p>
+        <div class="border-t border-gray-700 mt-8 pt-4 text-center sm:flex sm:flex-row sm:justify-around">
+            <div class="w-full sm:w-auto flex flex-col items-center sm:items-start mb-4 sm:mb-0">
+                <p class="text-sm">© All rights reserved Made by <a href="#" class="text-orange-500">CodeShogun</a></p>
             </div>
-            <div class="flex justify-center space-x-4 mt-2">
+            <div class="flex justify-center space-x-4 mb-4 sm:mb-0">
                 <img src="/images/visa.png" alt="Visa" class="w-8 h-8">
                 <img src="/images/mastercard.png" alt="MasterCard" class="w-8 h-8">
                 <img src="/images/paypal.png" alt="PayPal" class="w-8 h-8">
             </div>
-            <div class="flex justify-center space-x-8 mt-4 text-sm">
-                <a href="#" class="hover:underline">Terms & condition</a>
-                <a href="#" class="hover:underline">Privacy Policy</a>
+            <div class="flex justify-center space-x-8 text-sm">
+                <a href="#" class="hover:text-gray-500">Terms & condition</a>
+                <a href="#" class="hover:text-gray-500">Privacy Policy</a>
             </div>
         </div>
     </footer>

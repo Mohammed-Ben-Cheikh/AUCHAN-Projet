@@ -195,7 +195,7 @@ function CartVerification(data) {
     
     
         let imageContainer = document.createElement('div');
-        imageContainer.className = 'bg-white w-18 mx-2 h-36 flex items-center justify-center rounded-[2rem] shadow-lg';
+        imageContainer.className = 'bg-white w-22 h-32 flex items-center justify-center rounded-[2rem] shadow-lg md:mx-2';
         let image = document.createElement('img');
         image.className = 'w-52 h-40 rounded-[1rem]';
         image.src = element.img;
@@ -227,7 +227,7 @@ function CartVerification(data) {
         let selectContainer = document.createElement('div');
         let select = document.createElement('select');
         select.className = 'px-8 text-lg text-center text-white bg-[LimeGreen] rounded-[1rem]';
-        let sizes = ['select Size', 'S', 'M', 'L', 'XL'];
+        let sizes = ['neant', 'S', 'M', 'L', 'XL'];
         sizes.forEach((size, index) => {
             let option = document.createElement('option');
             option.value = index;
