@@ -1,15 +1,37 @@
-// let container=document.querySelector(".cartes");
-// let button=document.querySelector(".btnn");
-// let cardes=document.querySelector(".categories-card");
 
-// button.addEventListener('click', function() {
-//     // Vérifier si la section est cachée
-//     if (cardes.style.display === 'none' || cardes.style.display === '') {
-//         cardes.style.display = 'block'; // Afficher la section
-//     } else {
-//         cardes.style.display = 'none'; // Cacher la section
-//     }
-// });
+let btn1=document.querySelector(".btn1");
+let btn2=document.querySelector(".btn2");
+let btn3=document.querySelector(".btn3");
+let item1=document.querySelector(".item1");
+let item2=document.querySelector(".item2");
+let item3=document.querySelector(".item3");
+
+btn1.addEventListener("click",function(){
+
+item1.style.display="block";
+item2.style.display="none";
+item3.style.display="none";
+
+
+});
+btn2.addEventListener("click",function(){
+
+    item1.style.display="none";
+    item2.style.display="block";
+    item3.style.display="none";
+    
+    
+    });
+    btn3.addEventListener("click",function(){
+
+        item1.style.display="none";
+        item2.style.display="none";
+        item3.style.display="block";
+        
+        
+        });
+
+// la fonctionnalité des boutons pour les categories de mobile 
 
 
 let vegetables=document.querySelector(".vegetables");
@@ -89,9 +111,124 @@ menage.addEventListener("click",function(){
     menagecontainer.style.display="flex";
 
 });
-let left=document.querySelector(".left");
 
-left.addEventListener("click",function(){
 
-    vegetablescontainer.scrollBy(50,0);
+// la fonctionnalité des categories des best sellers pour le desktop
+
+let vegetablescontainer1=document.querySelector(".cards-container11");
+let milkcontainer1=document.querySelector(".cards-container22");
+let meatcontainer1=document.querySelector(".cards-container33");
+let fruitcontainer1=document.querySelector(".cards-container44");
+let electromenagecontainer1=document.querySelector(".cards-container55");
+let menagecontainer1=document.querySelector(".cards-container66");
+// Get the select element
+let categorySelect = document.querySelector("#categorySelect");
+
+// Add an event listener for the "change" event
+categorySelect.addEventListener("change", function() {
+  let selectedValue = categorySelect.value; // Get the selected value
+
+  // Hide all containers by default
+  vegetablescontainer1.style.display = 'none';
+  milkcontainer1.style.display = 'none';
+  meatcontainer1.style.display = 'none';
+  fruitcontainer1.style.display = 'none';
+  electromenagecontainer1.style.display = 'none';
+  menagecontainer1.style.display = 'none';
+
+  // Show the selected container based on the value
+  if (selectedValue === "vegetables") {
+    vegetablescontainer1.style.display = "block";
+  } else if (selectedValue === "milk-dairy") {
+    milkcontainer1.style.display = 'flex';
+  } else if (selectedValue === "meat") {
+    meatcontainer1.style.display = "flex";
+  } else if (selectedValue === "fruits") {
+    fruitcontainer1.style.display = "flex";
+  } else if (selectedValue === "electromenage") {
+    electromenagecontainer1.style.display = "flex";
+  } else if (selectedValue === "menage") {
+    menagecontainer1.style.display = "flex";
+  }
 });
+
+
+// let vegetables1=document.querySelector(".vegetables1");
+// let milkdairy1=document.querySelector(".milk-dairy1");
+// let meat1=document.querySelector(".meat1");
+// let fruits1=document.querySelector(".fruits1");
+// let electromenage1=document.querySelector(".electromenage1");
+// let menage1=document.querySelector(".menage1");
+// let vegetablescontainer1=document.querySelector(".cards-container11");
+// let milkcontainer1=document.querySelector(".cards-container22");
+// let meatcontainer1=document.querySelector(".cards-container33");
+// let fruitcontainer1=document.querySelector(".cards-container44");
+// let electromenagecontainer1=document.querySelector(".cards-container55");
+// let menagecontainer1=document.querySelector(".cards-container66");
+// console.log(milkdairy1);
+// vegetables1.addEventListener("click",function(){
+
+//     vegetablescontainer1.style.display="block";
+//     milkcontainer1.style.display='none';
+//     meatcontainer1.style.display="none";
+//     fruitcontainer1.style.display="none";
+//     electromenagecontainer1.style.display="none";
+//     menagecontainer1.style.display="none";
+
+// });
+
+// milkdairy1.addEventListener("click",function(){
+//     console.log("hello")
+//     vegetablescontainer1.style.display="none";
+//     milkcontainer1.style.display='flex';
+//     meatcontainer1.style.display="none";
+//     fruitcontainer1.style.display="none";
+//     electromenagecontainer1.style.display="none";
+//     menagecontainer1.style.display="none";
+
+// });
+// meat1.addEventListener("click",function(){
+
+//     vegetablescontainer1.style.display="none";
+//     milkcontainer1.style.display='none';
+//     meatcontainer1.style.display="flex";
+//     fruitcontainer1.style.display="none";
+//     electromenagecontainer1.style.display="none";
+//     menagecontainer1.style.display="none";
+
+// });
+// fruits1.addEventListener("click",function(){
+
+//     vegetablescontainer1.style.display="none";
+//     milkcontainer1.style.display='none';
+//     meatcontainer1.style.display="none";
+//     fruitcontainer1.style.display="flex";
+//     electromenagecontainer1.style.display="none";
+//     menagecontainer1.style.display="none";
+
+// });
+// electromenage1.addEventListener("click",function(){
+
+//     vegetablescontainer1.style.display="none";
+//     milkcontainer1.style.display='none';
+//     meatcontainer1.style.display="none";
+//     fruitcontainer1.style.display="none";
+//     electromenagecontainer1.style.display="flex";
+//     menagecontainer1.style.display="none";
+
+// });
+// menage1.addEventListener("click",function(){
+
+//     vegetablescontainer1.style.display="none";
+//     milkcontainer1.style.display='none';
+//     meatcontainer1.style.display="none";
+//     fruitcontainer1.style.display="none";
+//     electromenagecontainer1.style.display="none";
+//     menagecontainer1.style.display="flex";
+
+// });
+  
+// la fonctionnalité des best sellers pour le mobile 
+
+
+
