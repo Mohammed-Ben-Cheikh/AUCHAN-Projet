@@ -1,0 +1,24 @@
+.cards-container1::-webkit-scrollbar{
+display: none;
+}
+.cards-container2::-webkit-scrollbar{
+    display: none;
+    }
+    .cards-container3::-webkit-scrollbar{
+        display: none;
+        }
+        .cards-container4::-webkit-scrollbar{
+            display: none;
+            }
+            .cards-container5::-webkit-scrollbar{
+                display: none;
+                }
+                .cards-container6::-webkit-scrollbar{
+                    display: none;
+                    }
+                
+
+    .total.categories-card.fruits:checked ~ .les-cartes > div:not(.cards-container2)
+    {
+        display: none;
+    }
