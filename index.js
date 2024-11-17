@@ -230,5 +230,47 @@ categorySelect.addEventListener("change", function() {
   
 // la fonctionnalité des best sellers pour le mobile 
 
+function addtoLocaleStorage(event) {
+    let localStorageTable = JSON.parse(localStorage.getItem('cart')) || [];
+    let element = event.target.parentElement;
+    let isExist = false;
+    console.log(element);
+    console.log(element.querySelector('h4').textContent);
+
+    let data = {
+        title: element.querySelector('h4').textContent,
+        priceUnit: element.querySelector('.price').textContent,
+        price: element.querySelector('.price').textContent,
+        img: element.querySelector('img').getAttribute('src'),
+        quantity: 1,
+    }
 
 
+    localStorageTable.forEach((obj) => {
+        if(obj.title == data.title) {
+            obj.quantity += 1;
+            obj.price = parseFloat(obj.priceUnit * obj.quantity).toFixed(2);
+            isExist = true; 
+        }
+    });
+
+    if(!isExist) {
+        localStorageTable.push(data);
+    }
+
+    localStorage.setItem("cart" , JSON.stringify(localStorageTable));
+}
+
+document.querySelector('.cards-container1').addEventListener('click', (event) => addtoLocaleStorage(event));
+document.querySelector('.cards-container2').addEventListener('click', (event) => addtoLocaleStorage(event));
+document.querySelector('.cards-container3').addEventListener('click', (event) => addtoLocaleStorage(event));
+document.querySelector('.cards-container4').addEventListener('click', (event) => addtoLocaleStorage(event));
+document.querySelector('.cards-container5').addEventListener('click', (event) => addtoLocaleStorage(event));
+document.querySelector('.cards-container6').addEventListener('click', (event) => addtoLocaleStorage(event));
+
+document.querySelector('.cards-container11').addEventListener('click', (event) => addtoLocaleStorage(event));
+document.querySelector('.cards-container22').addEventListener('click', (event) => addtoLocaleStorage(event));
+document.querySelector('.cards-container33').addEventListener('click', (event) => addtoLocaleStorage(event));
+document.querySelector('.cards-container44').addEventListener('click', (event) => addtoLocaleStorage(event));
+document.querySelector('.cards-container55').addEventListener('click', (event) => addtoLocaleStorage(event));
+document.querySelector('.cards-container66').addEventListener('click', (event) => addtoLocaleStorage(event));
