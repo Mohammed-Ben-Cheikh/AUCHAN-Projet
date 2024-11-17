@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     loadFromStorage();
     countCart();
-    countTotalPrice("hello");
+    countTotalPrice();
 
     function addtoLocaleStorage(event) {
         let localStorageTable = JSON.parse(localStorage.getItem('cart')) || [];
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem("cart" ,JSON.stringify(temp));
         countCart();
         countTotalPrice();
-        //countTotalSelection(event);
+        countTotalSelection(event);
 
     }
 
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             countCart();
             countTotalPrice();
-            //countTotalSelection(event);
+            countTotalSelection(event);
     }
 
     function PricebySize(event) {
@@ -140,7 +140,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         localStorage.setItem("cart", JSON.stringify(storage));
         countCart();
-        countTotalPrice();  
+        countTotalPrice();
+        countTotalSelection(event);
     }
 
 function CartVerification(data) {
