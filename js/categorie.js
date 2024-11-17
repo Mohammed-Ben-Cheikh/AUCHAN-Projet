@@ -1,4 +1,6 @@
 let url = 'http://localhost:3000/api/data';
+let flex=false;
+
 let connection = new XMLHttpRequest();
 connection.open("GET", url, true);
 connection.send()
@@ -15,27 +17,63 @@ connection.onreadystatechange = function () {
             const end = start + itemsPerPage;
             const currentItems = data.slice(start, end);
 
-            document.getElementById("products-container").innerHTML = '';
-            currentItems.forEach(element => {
-                document.getElementById("products-container").innerHTML += `
-                <div class="bg-white shadow-md rounded-lg p-4">
-                        <img src="${element.image}" alt="${element.name}"/>
+            if(flex){
+                document.getElementById("products-container-flex").innerHTML=``
+                document.getElementById("products-container-grid").innerHTML=``
+
+
+                currentItems.forEach(element => {
+
+                document.getElementById("products-container-flex").innerHTML += `
+                    <div class="bg-white shadow-md rounded-lg p-4 flex  w-5/6">
+                        <div class="">
+                            <img class="imageP h-48 w-72" src="${element.image}" alt="${element.name}"/>
+                        </div>
+                        <div class="flex justify-around w-3/4 ">
+                            <div class="flex flex-col justify-between">
+                            <h3 class="title text-lg md:text-2xl">${element.name}</h3>
+                            <p>Description</p>
+                            <div class="">
+                                <span class="text-yellow-500">★★★★★</span>
+                                <span class="text-[12px] mt-1 ml-2">(1.2k reviews)</span>
+                            </div>
+                            <hr class="w-72">
+                            <button
+                                class="produts py-2 px-3 border-2 border-orange-500 rounded-[1rem] hover:bg-orange-500 hover:duration-500 hover:text-white ">Add
+                                to Cart</button>
+                            </div>
+                        <div class="flex  w-1/4 items-center">
+                            <p class=" text-CoralRed text-xl md:text-3xl"><span class="price">${element.price.toFixed(2)}</span></p>
+                        </div>
+                    </div>
+                    </div>
+                `
+                });      
+            }else{
+                document.getElementById("products-container-grid").innerHTML=``
+                document.getElementById("products-container-flex").innerHTML=``
+                
+                currentItems.forEach(element => {
+
+                document.getElementById("products-container-grid").innerHTML += `
+                
+                        <div class="bg-white shadow-md rounded-lg p-4">
+                        <img class="imageP" src="${element.image}" alt="${element.name}"/>
                         <div class="text-center">
                             <h3 class="title text-lg md:text-2xl">${element.name}</h3>
                             <div class="flex justify-center items-center mt-2">
                                 <span class="text-yellow-500">★★★★★</span>
                                 <span class="text-[12px] mt-1 ml-2">(1.2k reviews)</span>
                             </div>
-                            <p class="price text-CoralRed text-xl md:text-3xl">${element.price}.00$</p>
+                            <p class="text-CoralRed text-xl md:text-3xl"><span class="price">${element.price.toFixed(2)}</span></p>
                             <button
-                                class="produts py-2 px-3 border-2 border-orange-500 rounded-[1rem] hover:bg-orange-500 hover:duration-500 hover:text-white ">Add
+                                class=" py-2 px-3 border-2 border-orange-500 rounded-[1rem] hover:bg-orange-500 hover:duration-500 hover:text-white ">Add
                                 to Cart</button>
                         </div>
-                    </div>
-
+                    </div> 
                 `
-
-            });
+                });      
+            }
             document.getElementById("page-numbers").textContent = `Page ${currentPage} of ${totalPages}`;
 
             document.getElementById("prev").disabled = currentPage === 1;
@@ -53,30 +91,88 @@ connection.onreadystatechange = function () {
             currentPage++;
             showProducts(data.products);
         }
-    
+        
+        document.getElementById("flex-btn").addEventListener("click",()=>{
+            flex=true
+            showProducts(data.products)
+        })
+        document.getElementById("grid-btn").addEventListener("click",()=>{
+            flex=false
+            showProducts(data.products)
+        })
+
         document.getElementById("prev").addEventListener("click", prevPage, false);
         document.getElementById("next").addEventListener("click", nextPage, false);
 
         showProducts(data.products);
+        
         function addtoLocaleStorage(event) {
-            console.log("hello!")
-            let localTable = JSON.parse(localStorage.getItem('cart')) || [];
-            let element = event.target.parentElement.parentElement.parentElement;
-            console.log("aaaa",element);
-            console.log("bbbb",element.querySelector('.title').textContent);
+            let localStorageTable = JSON.parse(localStorage.getItem('cart')) || [];
+            let element = event.target.parentElement.parentElement;
+            let isExist = false;
+            console.log(element);
             
-            
+    
             let data = {
                 title: element.querySelector('.title').textContent,
+                priceUnit: element.querySelector('.price').textContent,
                 price: element.querySelector('.price').textContent,
-                image: element.querySelector('.imageP').getAttribute('src'),
+                img: element.querySelector('.imageP').getAttribute('src'),
+                quantity: 1,
             }
-            localTable.push(data);
-        
-            localStorage.setItem('cart', JSON.stringify(localTable));
+    
+    
+            localStorageTable.forEach((obj) => {
+                if(obj.title == data.title) {
+                    obj.quantity += 1;
+                    obj.price = parseFloat(obj.priceUnit * obj.quantity).toFixed(2);
+                    isExist = true;
+                }
+            });
+    
+            if(!isExist) {
+                localStorageTable.push(data);
+            }
+    
+            localStorage.setItem("cart" , JSON.stringify(localStorageTable));
+            
+        }
+
+        function addtoLocaleStorageFlex(event) {
+            let localStorageTable = JSON.parse(localStorage.getItem('cart')) || [];
+            let element = event.target.parentElement.parentElement.parentElement;
+            let isExist = false;
+            console.log(element);
+            
+    
+            let data = {
+                title: element.querySelector('.title').textContent,
+                priceUnit: element.querySelector('.price').textContent,
+                price: element.querySelector('.price').textContent,
+                img: element.querySelector('.imageP').getAttribute('src'),
+                quantity: 1,
+            }
+    
+    
+            localStorageTable.forEach((obj) => {
+                if(obj.title == data.title) {
+                    obj.quantity += 1;
+                    obj.price = parseFloat(obj.priceUnit * obj.quantity).toFixed(2);
+                    isExist = true;
+                }
+            });
+    
+            if(!isExist) {
+                localStorageTable.push(data);
+            }
+    
+            localStorage.setItem("cart" , JSON.stringify(localStorageTable));
+            
         }
         
         document.querySelector('.products').addEventListener('click', (event) => addtoLocaleStorage(event));
+        document.querySelector('.products2').addEventListener('click', (event) => addtoLocaleStorageFlex(event));
+
 
         document.getElementById("Viande").addEventListener("click", function () {
             const ProductViande = data.products.filter(function (item) {
