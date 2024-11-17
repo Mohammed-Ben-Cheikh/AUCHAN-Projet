@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // BUG: if Quantity is Already Incremeneted, modifiying Szif will cause a calculation Bug.(DONE)
     // UPDATE add Product should Verifier if the Product added is already in the cart  (DONE)
     // FEAT: Display the total Price of the cart) (DONE)
-  
+    // BUG: Adding product to panier should be in realtime (DONE)
 
     // BUG: Update the price Immédialty After the Size Changes.
     // BUG: Price Management from Size to Size
-    // BUG: Adding product to panier should be in realtime
+
 
 
     loadFromStorage();
@@ -36,18 +36,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 obj.quantity += 1;
                 obj.price = parseFloat(obj.priceUnit * obj.quantity).toFixed(2);
                 isExist = true;
-                CartVerification(data);        
+                CartVerification(data);   
             }
         });
 
         if(!isExist) {
             localStorageTable.push(data);
             CartVerification(data);
-            //addProduct(data);
         }
 
         localStorage.setItem("cart" , JSON.stringify(localStorageTable));
-        //CartVerification(event);
+        countCart();
+        countTotalPrice();
     }
  
     function increment(element, quantite, price) {
@@ -65,6 +65,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         localStorage.setItem("cart" ,JSON.stringify(temp));
+        countCart();
+        countTotalPrice();  
 
     }
 
@@ -88,6 +90,8 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 removeItem(event);
             }
+            countCart();
+            countTotalPrice();  
     }
 
     function PricebySize(event) {
@@ -126,6 +130,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         localStorage.setItem("cart", JSON.stringify(storage));
+        countCart();
+        countTotalPrice();  
     }
 
 function CartVerification(data) {
