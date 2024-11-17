@@ -35,12 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
             if(obj.title == data.title) {
                 obj.quantity += 1;
                 obj.price = parseFloat(obj.priceUnit * obj.quantity).toFixed(2);
-                isExist = true;          
+                isExist = true;
+                CartVerification(data);        
             }
         });
 
         if(!isExist) {
             localStorageTable.push(data);
+            CartVerification(data);
             //addProduct(data);
         }
 
@@ -126,27 +128,28 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem("cart", JSON.stringify(storage));
     }
 
-    function CartVerification(event) {
-        newProduct = event.target.parentElement.parentElement.parentElement;
-        let newProductTitle = element.querySelector('.title').textContent;
-        let productExists = false;
-    
-        let ProductCart = document.querySelectorAll('.cartContent');
-    
-        ProductCart.forEach((element) => {
-            if(newProductTitle == element.dataset.token) {
-                productExists = true;
-                let quantity = element.querySelector('#quantite');
-                let price = element.querySelector('.price');
-                increment(quantity, price);
-            }
-        });
-    
-        if(!productExists) {
-            console.log("Not Found! Adding to cart.");
-            addProduct(event);
+function CartVerification(data) {
+    let productExists = false;
+
+    let ProductCart = document.querySelectorAll('.cartContent');
+    console.log(ProductCart);
+
+    ProductCart.forEach((element) => {
+        if(data.title == element.dataset.token) {
+            productExists = true;
+            let quantity = element.querySelector('#quantite');
+            let price = element.querySelector('.price');
+            console.log(quantity);
+            console.log(price);
+            increment(data, quantity, price);
         }
+    })
+
+    if (!productExists) {
+        console.log("Not Found! Adding to cart.");
+        addProduct(data);
     }
+}
 
 
     function loadFromStorage() {
@@ -459,7 +462,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         priceContainer.textContent = total
-        console.log(total);
     }
     
     
