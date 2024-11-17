@@ -4,11 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // FEAT: the price need to be adjusted when increment or decrement QUantity (DONE)
     // FEAT: the price should be recalculated onchange the sizes (DONE)
     // BUG: if Quantity is Already Incremeneted, modifiying Szif will cause a calculation Bug.(DONE)
-      // UPDATE add Product should Verifier if the Product added is already in the cart  (DONE)
-
+    // UPDATE add Product should Verifier if the Product added is already in the cart  (DONE)
+    // FEAT: Display the total Price of the cart) (DONE)
   
-    // FEAT: Display the total Price of the cart)
+
     // BUG: Update the price Immédialty After the Size Changes.
+    // BUG: Price Management from Size to Size
+    // BUG: Adding product to panier should be in realtime
 
 
     loadFromStorage();
