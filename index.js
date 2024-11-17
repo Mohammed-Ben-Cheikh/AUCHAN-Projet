@@ -274,3 +274,33 @@ document.querySelector('.cards-container33').addEventListener('click', (event) =
 document.querySelector('.cards-container44').addEventListener('click', (event) => addtoLocaleStorage(event));
 document.querySelector('.cards-container55').addEventListener('click', (event) => addtoLocaleStorage(event));
 document.querySelector('.cards-container66').addEventListener('click', (event) => addtoLocaleStorage(event));
+
+
+// ajouter la fonctionnalité de la carousel
+
+let images = document.querySelectorAll('.carousel-item');
+let currentIndex = 0;
+
+
+function showNextImage() {
+    images[currentIndex].classList.remove('opacity-100');
+    images[currentIndex].classList.add('opacity-0');
+
+    let oldIndex = currentIndex;
+    setTimeout(() => {
+        images[oldIndex].classList.add('hidden');
+    }, 500);
+
+    currentIndex = (currentIndex + 1) % images.length;
+
+    setTimeout(() => {
+        images[currentIndex].classList.remove('hidden');
+        setTimeout(() => {
+            images[currentIndex].classList.add('opacity-100');
+            images[currentIndex].classList.remove('opacity-0');
+        }, 10);
+    }, 500);
+
+}
+
+setInterval(showNextImage, 2000);
