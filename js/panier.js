@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // BUG: Adding product to panier should be in realtime (DONE)
     // FEAT: calculate the selected Product in the cart (DONE)
     // BUG: Incremenet & Decrement should Update the data-price (DONE)
+    // FEAT: Add select All function(DONE)
+    // BUG: tracking selected Product Price(DONE)
 
     // BUG: Update the price Immédialty After the Size Changes.
-    // FEAT: Add select All function
-    // BUG: tracking selected Product Price
 
 
 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function increment(event, element, quantite, price) {
         let temp = JSON.parse(localStorage.getItem('cart'));
 
-        let originalPrice = parseFloat(price.dataset.originalPrice);
+        let originalPrice = parseFloat(price.dataset.priceBysize);
         quantite.textContent = parseInt(quantite.textContent) + 1;
         price.textContent = "$ " + (originalPrice *  parseFloat(quantite.textContent)).toFixed(2);
 
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let currentQuantite = parseInt(quantite.textContent);
         if (currentQuantite > 1) {
-            let originalPrice = parseFloat(price.dataset.originalPrice);
+            let originalPrice = parseFloat(price.dataset.priceBysize);
             quantite.textContent = currentQuantite - 1;
             price.textContent = "$ " + (originalPrice *  parseFloat(quantite.textContent)).toFixed(2);
 
@@ -107,20 +107,24 @@ document.addEventListener('DOMContentLoaded', function () {
         let target = event.target.parentElement.parentElement;
         let ClientSize = event.target.value;
         let price = target.querySelector('.price');
-        let originalPrice = parseFloat(price.getAttribute('data-price-original'));
+        let originalPrice = price.getAttribute('data-original-price');
         
         switch(ClientSize) {
             case '1':
-                price.setAttribute('data-price', originalPrice);
+                price.setAttribute('data-price-bysize', originalPrice).toFixed(2);
+                console.log(price);
                 break;
             case '2':
-                price.setAttribute('data-price', (originalPrice * 1.10).toFixed(2));
+                price.setAttribute('data-price-bysize', (originalPrice * 1.10).toFixed(2));
+                console.log(price);
                 break;
             case '3':
-                price.setAttribute('data-price', (originalPrice * 1.20));
+                price.setAttribute('data-price-bysize', (originalPrice * 1.20).toFixed(2));
+                console.log(price);
                 break;
             case '4':
-                price.setAttribute('data-price', (originalPrice * 1.30));
+                price.setAttribute('data-price-bysize', (originalPrice * 1.30).toFixed(2));
+                console.log(price);
                 break;
         }
     }
@@ -159,7 +163,6 @@ function CartVerification(data) {
     })
 
     if (!productExists) {
-        console.log("Not Found! Adding to cart.");
         addProduct(data);
     }
 }
