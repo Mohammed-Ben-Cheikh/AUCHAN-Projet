@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     loadFromStorage();
-
+    countCart();
     function addtoLocaleStorage(event) {
         let localStorageTable = JSON.parse(localStorage.getItem('cart')) || [];
         let element = event.target.parentElement.parentElement.parentElement;
@@ -436,6 +436,13 @@ document.addEventListener('DOMContentLoaded', function () {
         trashIcon.addEventListener('click', (event) => removeItem(event));
 
     }*/
+
+    function countCart() {
+        let cartContainer = document.querySelectorAll('.cartContent');
+        let count = cartContainer.length;
+
+        document.querySelector('.count').textContent = count;
+    }
     
     
     document.getElementById('productSuggestion').addEventListener('click', (event) => {
