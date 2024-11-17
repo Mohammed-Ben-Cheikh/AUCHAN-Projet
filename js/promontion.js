@@ -139,17 +139,32 @@ function showNextImage() {
 setInterval(showNextImage, 2000);
 
 function addtoLocaleStorage(event) {
-    console.log("hello!")
-    let localTable = JSON.parse(localStorage.getItem('cart')) || [];
+    let localStorageTable = JSON.parse(localStorage.getItem('cart')) || [];
     let element = event.target.parentElement;
+    let isExist = false;
+
     let data = {
         title: element.querySelector('.title').textContent,
+        priceUnit: element.querySelector('.price').textContent,
         price: element.querySelector('.price').textContent,
-        image: element.querySelector('img').getAttribute('src')
+        img: element.querySelector('img').getAttribute('src'),
+        quantity: 1,
     }
-    localTable.push(data);
 
-    localStorage.setItem('cart', JSON.stringify(localTable));
+
+    localStorageTable.forEach((obj) => {
+        if(obj.title == data.title) {
+            obj.quantity += 1;
+            obj.price = parseFloat(obj.priceUnit * obj.quantity).toFixed(2);
+            isExist = true;
+        }
+    });
+
+    if(!isExist) {
+        localStorageTable.push(data);
+    }
+
+    localStorage.setItem("cart" , JSON.stringify(localStorageTable));
 }
 
 document.querySelector('.products').addEventListener('click', (event) => addtoLocaleStorage(event));
