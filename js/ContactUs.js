@@ -1,5 +1,4 @@
 let data = {};
-let id = 0 ;
 // Fonction pour afficher une alerte personnalisée
 function showAlert(message) {
     document.getElementById("alertMessage").textContent = message;
@@ -103,7 +102,7 @@ function validation() {
                 message
             };
             // Stocker les données dans localStorage
-            localStorage.setItem(`formData${}`, JSON.stringify(data));
+            localStorage.setItem(`formData${id}`, JSON.stringify(data));
             console.log("Data collected and saved:", data);
         } else {
             console.log("Please fill in all fields.");
@@ -111,6 +110,8 @@ function validation() {
     } else {
         showAlert("Erreurs de validation :\n" + errorMessage);
     }
+
+
 };
 
 
